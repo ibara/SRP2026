@@ -1,5 +1,14 @@
-https://www.unb.ca/cic/datasets/malmem-2022.html
+1) https://www.unb.ca/cic/datasets/malmem-2022.html
 
-https://figshare.com/articles/dataset/Android_malware_dataset_for_machine_learning_2/5854653
+  Features: 
+    -full features listed here (https://pdfs.semanticscholar.org/b2e2/0dc7a34753311472a5f2314fbf866d7eddd0.pdf)
+      -Malfind
+      -Ldrmodule
+      -Handles
+      -Process View
+      -Apihooks
 
-https://www.kaggle.com/datasets/saurabhshahane/classification-of-malwares
+2) https://figshare.com/articles/dataset/Android_malware_dataset_for_machine_learning_2/5854653
+
+
+3) https://www.kaggle.com/datasets/saurabhshahane/classification-of-malwares
