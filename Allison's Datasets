@@ -34,10 +34,10 @@
 
  
 
-5) https://www.kaggle.com/datasets/saurabhshahane/classification-of-malwares
+**5) https://www.kaggle.com/datasets/saurabhshahane/classification-of-malwares
 
-PE Headers
- Features:
+  PE Headers
+   Features:
     -full features listed under Kaggle:
       -IMAGE_DOS_HEADER (19)
      "e_magic", "e_cblp", "e_cp","e_crlc","e_cparhdr",
@@ -54,9 +54,15 @@ PE Headers
      "SizeOfUninitializedData", "AddressOfEntryPoint",
      "BaseOfCode", "BaseOfData", "ImageBase", "SectionAlignment", "FileAlignment",
      "MajorOperatingSystemVersion", "MinorOperatingSystemVersion",
-     "MajorImageVersion", "MinorImageVersion", "MajorSubsystemVersion",
      "MinorSubsystemVersion", "SizeOfImage", "SizeOfHeaders", "CheckSum",
      "Subsystem", "DllCharacteristics", "SizeOfStackReserve", "SizeOfStackCommit",
      "SizeOfHeapReserve", "SizeOfHeapCommit", "LoaderFlags", "NumberOfRvaAndSizes"
+
+**6) https://github.com/FutureComputing4AI/EMBER2024/blob/main/README.md
+
+  PE headers
+    Features:
+     -full features listed here: https://arxiv.org/pdf/2506.05074
+      OVERLAPS WITH SOME FROM CLaMP (Number Of Sections, Characteristics, size of code, size of image, magic, size of stack reserve)
 
 
