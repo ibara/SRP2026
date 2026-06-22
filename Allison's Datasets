@@ -1,5 +1,7 @@
+
 1) https://www.unb.ca/cic/datasets/malmem-2022.html
 
+  RAM based
   Features: 
     -full features listed here (https://pdfs.semanticscholar.org/b2e2/0dc7a34753311472a5f2314fbf866d7eddd0.pdf)
       -Malfind
@@ -8,7 +10,32 @@
       -Process View
       -Apihooks
 
-2) https://figshare.com/articles/dataset/Android_malware_dataset_for_machine_learning_2/5854653
+*2) https://www.unb.ca/cic/datasets/andmal2017.html
+
+  Features:
+    -Flow stats
+    -Packet Size Stats
+    -Inter-Arrival Times (IAT)
+    -Flag Counts
+    -Active vs. Idle Loops
+
+*3) https://www.unb.ca/cic/datasets/android-adware.html
+
+  Features:
+    -full features listed here (https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8476939)
+      -Network Flow Stats
+      -Packet Length Distributions
+      -Inter-Arrival Times (IAT)
+      -TCP Flags
 
 
-3) https://www.kaggle.com/datasets/saurabhshahane/classification-of-malwares
+4) https://figshare.com/articles/dataset/Android_malware_dataset_for_machine_learning_2/5854653
+    -Haven't heard back from them
+
+ 
+
+5) https://www.kaggle.com/datasets/saurabhshahane/classification-of-malwares
+
+PE Headers
+ Features:
+    -full features listed here (file:///Users/theaurilios/Downloads/Malware_Classification_Using_Machine_Learning_and_.pdf)
