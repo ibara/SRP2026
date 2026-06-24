@@ -1,9 +1,10 @@
-https://www.unb.ca/cic/datasets/ynu-iot-2026.html
+1) https://www.unb.ca/cic/datasets/ynu-iot-2026.html
   - Many files (combined into one(BIG file)), however can be downloaded seperartly 
                     - Can be sorted by Malware family or Arcitecture( arm, x86, mips, mipsel)
   - Literally gives a how to combine data sets for massive file
+  - https://cicresearch.ca/CICDataset/Yokohama/
   
 
 
-https://www.kaggle.com/datasets/dhoogla/ember-2018-v2-features?resource=download
+2) https://www.kaggle.com/datasets/dhoogla/ember-2018-v2-features?resource=download
   - so far trying to compute, has shown problems, pandas and pyarrow are wrong version?
