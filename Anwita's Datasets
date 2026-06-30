@@ -1,0 +1,33 @@
+	1) https://dl.acm.org/doi/10.1145/3711896.3737431
+		https://github.com/futurecomputing4ai/ember2024
+
+		Features:
+		
+		• DOS header features
+		• Rich header features  
+		• PE data directory features. 
+		• Authenticode signature features 
+		• General file information
+		• Byte histogram statistics
+		• String statistics 
+		
+
+	1) https://www.stratosphereips.org/datasets-iot23
+
+    • ts 
+    • uid 
+    • id.orig_h 
+    • id.orig_p
+    • id.resp_h 
+    • id.resp_p
+
+	1) https://whyisyoung.github.io/BODMAS/
+
+    • PE header fields
+    • Optional header fields
+    • Section metadata
+    • Imports/exports
+    • Data directories
+    • Byte histogram
+    • Byte entropy histogram
+    • String metadata
