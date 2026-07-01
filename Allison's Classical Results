@@ -1,0 +1,16 @@
+classical results for CLaMP:
+
+Overall Accuracy: 0.8149
+              precision  f1-score   samples
+Benign (0)      0.76      0.82       500
+Malware (1)     0.88      0.81       537
+
+----------------------------------------------------------
+
+classical results for EMBER2024:
+
+Overall Accuracy: 0.5670
+              precision    f1-score   samples
+Benign (0)       0.55        0.71      2119
+Malware (1)     0.85        0.17      1881
+
