@@ -3,8 +3,13 @@
                     - Can be sorted by Malware family or Arcitecture( arm, x86, mips, mipsel)
   - Literally gives a how to combine data sets for massive file
   - https://cicresearch.ca/CICDataset/Yokohama/
-  
+
+ Files used for the big data set-
+1. x86 - sar.parquet
+2. MIPSEL - sar.parquet
+3. MIPS - sar.parquet
+4. ARM - sar.parquet
 
 
 2) https://www.kaggle.com/datasets/dhoogla/ember-2018-v2-features?resource=download
-  - so far trying to compute, has shown problems, pandas and pyarrow are wrong version?
+ 
