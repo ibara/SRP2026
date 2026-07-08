@@ -17,3 +17,20 @@ Confusion Matrix:
  [[52893  7105]
  [ 5089 54897]]
 _____________________________________________________________________________________________________________
+CIC-YNU-IoTMal Dataset 2026 
+
+Accuracy: 0.8639907285751077
+
+Confusion Matrix:
+[[205740  57087]
+ [  5230 190125]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.98      0.78      0.87    262827
+       Mirai       0.77      0.97      0.86    195355
+
+    accuracy                           0.86    458182
+   macro avg       0.87      0.88      0.86    458182
+weighted avg       0.89      0.86      0.86    458182
