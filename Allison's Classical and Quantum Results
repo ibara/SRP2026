@@ -20,17 +20,17 @@ QUANTUM Simulation Results for CLaMP:
 
 Final Results for CLaMP Quantum Simulation:
 
-Accuracy: 0.9103
-ROC AUC:  0.9087
+Accuracy: 0.8667
+ROC AUC:  0.8616
 
               precision    recall  f1-score   support
 
-  Benign (0)       0.95      0.86      0.90       500
- Malware (1)       0.88      0.95      0.92       537
+  Benign (0)       0.83      0.94      0.88        16
+ Malware (1)       0.92      0.79      0.85        14
 
-    accuracy                           0.91      1037
-   macro avg       0.91      0.91      0.91      1037
-weighted avg       0.91      0.91      0.91      1037
+    accuracy                           0.87        30
+   macro avg       0.88      0.86      0.86        30
+weighted avg       0.87      0.87      0.87        30
 
 -----------------------------------------------------------
 
