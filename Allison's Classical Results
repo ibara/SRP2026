@@ -1,16 +1,50 @@
-classical results for CLaMP:
+CLASSICAL results for CLaMP:
 
-Overall Accuracy: 0.8149
-              precision  f1-score   samples
-Benign (0)      0.76      0.82       500
-Malware (1)     0.88      0.81       537
+             CLASSICAL SVM RESULTS
+
+RESULTS: LINEAR KERNEL SVM
+Overall Accuracy: 0.8177
+
+Classification Matrix Detail:
+              precision    recall  f1-score   support
+
+  Benign (0)       0.78      0.87      0.82       500
+ Malware (1)       0.87      0.77      0.81       537
+
+    accuracy                           0.82      1037
+   macro avg       0.82      0.82      0.82      1037
+weighted avg       0.82      0.82      0.82      1037
 
 ----------------------------------------------------------
+QUANTUM Simulation Results for CLaMP:
 
-classical results for EMBER2024:
+Final Results for CLaMP Quantum Simulation:
 
-Overall Accuracy: 0.5670
-              precision    f1-score   samples
-Benign (0)       0.55        0.71      2119
-Malware (1)     0.85        0.17      1881
+Accuracy: 0.9103
+ROC AUC:  0.9087
 
+              precision    recall  f1-score   support
+
+  Benign (0)       0.95      0.86      0.90       500
+ Malware (1)       0.88      0.95      0.92       537
+
+    accuracy                           0.91      1037
+   macro avg       0.91      0.91      0.91      1037
+weighted avg       0.91      0.91      0.91      1037
+
+-----------------------------------------------------------
+
+CLASSICAL results for EMBER2024:
+
+             CLASSICAL SVM RESULTS
+Overall Accuracy: 0.5627
+
+Classification Matrix Detail:
+              precision    recall  f1-score   support
+
+  Benign (0)       0.55      0.98      0.70      2119
+ Malware (1)       0.78      0.10      0.17      1881
+
+    accuracy                           0.56      4000
+   macro avg       0.67      0.54      0.44      4000
+weighted avg       0.66      0.56      0.45      4000
