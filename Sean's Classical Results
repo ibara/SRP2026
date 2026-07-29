@@ -41,21 +41,22 @@ ________________________________________________________________________________
 CIC-YNU-IoTMal Dataset 2026 
 
   Classical
-Accuracy: 0.8639907285751077                                                    
-
-Confusion Matrix:
-[[205740  57087]
- [  5230 190125]]
+Accuracy: 0.8749220212102308
 
 Classification Report:
               precision    recall  f1-score   support
 
-      Benign       0.98      0.78      0.87    262827
-       Mirai       0.77      0.97      0.86    195355
+      Benign       0.97      0.78      0.87    210262
+     Malware       0.80      0.98      0.88    196900
 
-    accuracy                           0.86    458182
-   macro avg       0.87      0.88      0.86    458182
-weighted avg       0.89      0.86      0.86    458182
+    accuracy                           0.87    407162
+   macro avg       0.89      0.88      0.87    407162
+weighted avg       0.89      0.87      0.87    407162
+
+
+Confusion Matrix:
+[[163539  46723]
+ [  4204 192696]]
 
    Quantum
 Accuracy for Benign: 0.7333333333333333
