@@ -1,4 +1,4 @@
-CLASSICAL results for CLaMP:
+FULL CLASSICAL results for CLaMP:
 
              CLASSICAL SVM RESULTS
 
@@ -15,26 +15,42 @@ Classification Matrix Detail:
    macro avg       0.82      0.82      0.82      1037
 weighted avg       0.82      0.82      0.82      1037
 
+SPLIT CLASSICAL results for CLaMP:
+
+             CLASSICAL SVM RESULTS
+
+RESULTS: LINEAR KERNEL SVM
+Overall Accuracy: 0.7800
+
+Classification Matrix Detail:
+              precision    recall  f1-score   support
+
+  Benign (0)       0.74      0.83      0.78        48
+ Malware (1)       0.83      0.73      0.78        52
+
+    accuracy                           0.78       100
+   macro avg       0.78      0.78      0.78       100
+weighted avg       0.79      0.78      0.78       100
+
 ----------------------------------------------------------
 QUANTUM Simulation Results for CLaMP:
 
 Final Results for CLaMP Quantum Simulation:
-
-Accuracy: 0.8667
-ROC AUC:  0.8616
+Accuracy: 0.8600
+ROC AUC:  0.8623
 
               precision    recall  f1-score   support
 
-  Benign (0)       0.83      0.94      0.88        16
- Malware (1)       0.92      0.79      0.85        14
+  Benign (0)       0.82      0.89      0.85        46
+ Malware (1)       0.90      0.83      0.87        54
 
-    accuracy                           0.87        30
-   macro avg       0.88      0.86      0.86        30
-weighted avg       0.87      0.87      0.87        30
+    accuracy                           0.86       100
+   macro avg       0.86      0.86      0.86       100
+weighted avg       0.86      0.86      0.86       100
 
 -----------------------------------------------------------
 
-CLASSICAL results for EMBER2024:
+CLASSICAL FULL results for EMBER2024:
 
              CLASSICAL SVM RESULTS
 Overall Accuracy: 0.5627
@@ -48,3 +64,35 @@ Classification Matrix Detail:
     accuracy                           0.56      4000
    macro avg       0.67      0.54      0.44      4000
 weighted avg       0.66      0.56      0.45      4000
+
+
+CLASSICAL SPLIT DATA Results for EMBER:
+
+          CLASSICAL SVM RESULTS
+Overall Accuracy: 0.5800
+
+Classification Matrix Detail:
+              precision    recall  f1-score   support
+
+  Benign (0)       0.56      0.96      0.70        26
+ Malware (1)       0.80      0.17      0.28        24
+
+    accuracy                           0.58        50
+   macro avg       0.68      0.56      0.49        50
+weighted avg       0.67      0.58      0.50        50
+-----------------------------------------------------------
+QUANTUM Results for EMBER:
+
+Quantum Overall Accuracy: 0.54
+
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.53      1.00      0.69        26
+           1       1.00      0.04      0.08        24
+
+    accuracy                           0.54        50
+   macro avg       0.77      0.52      0.39        50
+weighted avg       0.76      0.54      0.40        50
+
+
