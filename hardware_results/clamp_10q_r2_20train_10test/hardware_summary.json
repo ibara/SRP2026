@@ -1,0 +1,126 @@
+{
+  "retrieved_at_utc": "2026-08-17T15:14:54.729310+00:00",
+  "job_id": "da10qv63kjvs73865pfg",
+  "backend": "ibm_rensselaer",
+  "status": "DONE",
+  "actual_shots": {
+    "train": 1024,
+    "test": 1024
+  },
+  "hardware_quantum_kernel": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "roc_auc": 1.0,
+    "predictions": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "decision_scores": [
+      0.32813421366288764,
+      -0.7738927860969014,
+      0.14026498714647345,
+      -0.6905232026602122,
+      -0.004107008185662758,
+      0.01858193023585604,
+      -0.04302326958940761,
+      0.45140997273177397,
+      -0.08563311365312753,
+      -0.5848630485503102
+    ],
+    "truth": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  "exact_quantum_kernel": {
+    "accuracy": 0.7,
+    "balanced_accuracy": 0.75,
+    "roc_auc": 1.0,
+    "predictions": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "decision_scores": [
+      0.8620371184368371,
+      -0.9867842025825908,
+      0.7897473118917223,
+      -0.9099510507146571,
+      0.09263874784743066,
+      0.22391800533520076,
+      0.07273635897687604,
+      1.0048365616996364,
+      0.0909470370888263,
+      -0.7060481163524964
+    ],
+    "truth": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  "hardware_vs_exact_kernel": {
+    "train_off_diagonal": {
+      "mae": 0.09743202578234086,
+      "rmse": 0.17890891493167524,
+      "pearson_correlation": 0.9781148498159249,
+      "relative_frobenius_error": 0.47409260877186077
+    },
+    "test": {
+      "mae": 0.10568035351627353,
+      "rmse": 0.1871794597216763,
+      "pearson_correlation": 0.9867561782673113,
+      "relative_frobenius_error": 0.4754920322842647
+    },
+    "prediction_disagreement_fraction": 0.3,
+    "raw_train_min_eigenvalue": 0.3467576070654524,
+    "psd_train_min_eigenvalue": 0.3467576070654529
+  },
+  "job_details": {
+    "metrics": {
+      "caller": "qiskit_ibm_runtime~sampler.py",
+      "qiskit_version": "qiskit_ibm_runtime-0.48.0,qiskit-2.5.1*,qiskit_aer-0.17.2",
+      "timestamps": {
+        "created": "2026-08-16T19:20:28.299879Z",
+        "finished": "2026-08-16T19:58:28.298311Z",
+        "running": "2026-08-16T19:56:12.33917Z"
+      },
+      "usage": {
+        "qpu_charge_time_seconds": 110,
+        "status": "complete"
+      },
+      "circuits_execution_time_ns": 107389232640
+    },
+    "usage_seconds": 110
+  }
+}
