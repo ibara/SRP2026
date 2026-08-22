@@ -1,4 +1,6 @@
 pandas
+pyarrow
+kaggle
 numpy
 matplotlib
 seaborn

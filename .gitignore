@@ -2,3 +2,7 @@ service.py
 .venv/
 ClaMP_Raw-5184.csv
 __pycache__/
+
+# Downloaded datasets are large and/or redistribution-restricted.
+data/*
+!data/README.md

@@ -59,7 +59,7 @@ I do not compare the saved accuracies as if they came from one benchmark: the no
 | Workflow | Current experiment | Saved result | Approximate kernel evaluations | My hardware assessment |
 |---|---|---:|---:|---|
 | Allison: CLaMP | 200 train / 100 test; 10 native features; 10 qubits | Aer accuracy 0.860 | 39,900 | Best anchor bc already ran on hardware, but expensive and may have duplication |
-| Sean: EMBER 2018 | 140 train / 60 test; PCA to 4 features; 4 qubits | Exact/simulator accuracy 0.767 | 18,130 | Best comparison candidate after obtaining the missing parquet data |
+| Sean: EMBER 2018 | 140 train / 60 test; PCA to 4 features; 4 qubits | Exact/simulator accuracy 0.767 | 18,130 | Best comparison candidate; the required parquet is now available locally |
 | Allison: EMBER2024 | 200 train / 50 test; 10 features; 10 qubits | Aer accuracy 0.540 | 29,900 | Not hardware-ready as a primary model; malware recall is only 0.04 |
 | Sean: CIC-YNU-IoT | 140 train / 60 test; PCA to 4 features; 4 qubits | Saved accuracy 0.733 | 18,130 | Circuit is feasible, but the saved result is invalid for comparison until preprocessing is repaired |
 | Fabiana: malware-recognition prototype | Approximately 928 train / 232 test; 8 features; 8 qubits | No valid quantum result | About 645,424 | Not hardware-ready without subsampling and code repair |
@@ -73,7 +73,9 @@ I do not compare the saved accuracies as if they came from one benchmark: the no
 - Sean's CIC-YNU-IoT notebook preprocesses the data once before constructing the training kernel, then fits a second preprocessing pipeline before constructing the test kernel. The test-kernel columns therefore no longer correspond to the training points used for the training kernel. I would repair and rerun this result before including it.
 - Fabiana's notebook evaluates an unbounded full kernel and later references `qy_test` instead of `y_test`. I would add a controlled subset and fix the metric cell before considering hardware execution.
 
-Only the CLaMP raw dataset is currently available in this checkout. The EMBER 2018, EMBER2024, CIC-YNU-IoT, and Fabiana datasets are referenced through machine-specific absolute paths, so I cannot reproduce or submit those workflows until the group supplies the data or portable download/preparation scripts.
+## Dataset setup
+
+I replaced the contributors' machine-specific dataset paths with repository-relative paths and documented every active source and target in [`data/README.md`](data/README.md). I downloaded and validated the EMBER 2018 training parquet and Fabiana CSV locally; Git ignores the data files. CIC-YNU-IoT still requires its personal registration form, and I need to declare an EMBER2024 architecture/split subset before downloading that much larger corpus.
 
 ## My recommended paper experiment
 
@@ -85,7 +87,7 @@ I would compare three primary configurations:
 
 1. **CLaMP-native-10:** Allison's 10 native CLaMP features mapped to 10 qubits.
 2. **CLaMP-PCA-4:** Sean's four-component PCA strategy applied to the same CLaMP samples.
-3. **EMBER2018-PCA-4:** Sean's four-qubit EMBER 2018 workflow, after its dataset is made available.
+3. **EMBER2018-PCA-4:** Sean's four-qubit EMBER 2018 workflow using the validated local parquet.
 
 The first two configurations isolate the feature-compression and circuit-width tradeoff on one dataset. The third tests whether the four-qubit result transfers to a larger, established malware dataset.
 
@@ -152,5 +154,5 @@ I configured the runner to use a locally saved Qiskit Runtime account; I did not
 - Although my hardware subset has no direct duplicate overlap, the source CLaMP split was not group-deduplicated before sampling.
 - The favorable hardware prediction changes occurred near the SVC threshold and may be noise-sensitive.
 - The proposed four-qubit benchmark is intentionally classically simulable; I use it to validate hardware behavior, not to claim classical intractability.
-- I need the group to provide the non-CLaMP datasets and I need to repair the CIC-YNU-IoT and Fabiana workflows before including them.
+- I still need to complete CIC-YNU-IoT registration, select a reproducible EMBER2024 subset, and repair the CIC-YNU-IoT and Fabiana workflows before including them.
 - If the compact results remain stable across seeds and hardware repetitions, I will extend the study to more features, deeper maps, additional malware datasets, and stronger classical baselines.
