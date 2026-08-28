@@ -1,7 +1,26 @@
+# Local credentials and environments
 service.py
+.env
+.env.*
+!.env.example
 .venv/
-ClaMP_Raw-5184.csv
+
+# Python and test caches
 __pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter and editor metadata
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Downloaded datasets
+ClaMP_Raw-5184.csv
 
 # Downloaded datasets are large and/or redistribution-restricted.
 data/*

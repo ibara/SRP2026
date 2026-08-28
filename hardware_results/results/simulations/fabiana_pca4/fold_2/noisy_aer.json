@@ -1,0 +1,60 @@
+{
+  "configuration": {
+    "name": "fabiana_pca4",
+    "dataset": "fabiana",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 2,
+  "mode": "noisy_aer",
+  "shots": 512,
+  "metrics": {
+    "accuracy": 0.9375,
+    "balanced_accuracy": 0.9375,
+    "roc_auc": 0.959375,
+    "confusion_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        5,
+        35
+      ]
+    ],
+    "benign_recall": 1.0,
+    "malware_recall": 0.875
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.13887559642244843,
+    "negative_eigenvalue_count": 19,
+    "negative_eigenvalue_mass": 1.1279328373446793,
+    "projected_minimum_eigenvalue": -1.9723995510601884e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.018929200627908267,
+      "rmse": 0.028662999191345198,
+      "pearson_correlation": 0.999071134361607,
+      "relative_frobenius_error": 0.06869423361885622
+    },
+    "test": {
+      "mae": 0.019930057385210878,
+      "rmse": 0.029842040329905194,
+      "pearson_correlation": 0.9989526540946548,
+      "relative_frobenius_error": 0.06935298822175005
+    }
+  },
+  "elapsed_seconds": 1448.1199370179966,
+  "execution_details": {
+    "circuit": "hardware_results/results/circuits/aer_active_fidelity_4q.qpy",
+    "circuit_metadata": "hardware_results/results/circuits/aer_active_fidelity_4q.json",
+    "noise_model": "hardware_results/results/circuits/aer_active_noise_model_4q.json",
+    "active_wire_relabeling": true,
+    "simulator_method": "statevector",
+    "shot_branching": true,
+    "parameter_chunk_size": 128,
+    "max_parallel_experiments": 1
+  },
+  "created_at_utc": "2026-08-27T09:24:26.148277+00:00"
+}

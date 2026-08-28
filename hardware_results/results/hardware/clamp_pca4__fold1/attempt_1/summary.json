@@ -1,0 +1,104 @@
+{
+  "condition": {
+    "condition_id": "clamp_pca4__fold1",
+    "configuration": "clamp_pca4",
+    "dataset": "clamp",
+    "representation": "pca",
+    "qubits": 4,
+    "fold": 1,
+    "repeat": 0,
+    "anchor": false,
+    "order": 8,
+    "attempts": [
+      {
+        "attempt": 1,
+        "job_id": "da7dubm0ukec73836cmg",
+        "batch_id": "7f298afd-4452-4e66-814a-999eca99dbbd",
+        "submitted_at_utc": "2026-08-26T12:42:23.458788+00:00",
+        "status": "DONE",
+        "shots": 512,
+        "train_evaluations": 3160,
+        "test_evaluations": 6400,
+        "total_executions": 4894720,
+        "directory": "hardware_results/results/hardware/clamp_pca4__fold1/attempt_1",
+        "status_checked_at_utc": "2026-08-26T22:46:03.634870+00:00"
+      }
+    ]
+  },
+  "attempt": {
+    "attempt": 1,
+    "job_id": "da7dubm0ukec73836cmg",
+    "batch_id": "7f298afd-4452-4e66-814a-999eca99dbbd",
+    "submitted_at_utc": "2026-08-26T12:42:23.458788+00:00",
+    "status": "DONE",
+    "shots": 512,
+    "train_evaluations": 3160,
+    "test_evaluations": 6400,
+    "total_executions": 4894720,
+    "directory": "hardware_results/results/hardware/clamp_pca4__fold1/attempt_1",
+    "status_checked_at_utc": "2026-08-26T22:46:03.634870+00:00"
+  },
+  "configuration": {
+    "name": "clamp_pca4",
+    "dataset": "clamp",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "mode": "hardware",
+  "metrics": {
+    "accuracy": 0.8,
+    "balanced_accuracy": 0.8,
+    "roc_auc": 0.8049999999999999,
+    "confusion_matrix": [
+      [
+        34,
+        6
+      ],
+      [
+        10,
+        30
+      ]
+    ],
+    "benign_recall": 0.85,
+    "malware_recall": 0.75
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.2515260049423898,
+    "negative_eigenvalue_count": 18,
+    "negative_eigenvalue_mass": 1.616176362757048,
+    "projected_minimum_eigenvalue": -1.6776261950123738e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.03931542837298938,
+      "rmse": 0.051894544956182335,
+      "pearson_correlation": 0.996275185263571,
+      "relative_frobenius_error": 0.10154819773135769
+    },
+    "test": {
+      "mae": 0.040160789493442886,
+      "rmse": 0.05358933875416234,
+      "pearson_correlation": 0.996211773184971,
+      "relative_frobenius_error": 0.10662468235905999
+    },
+    "prediction_disagreement_fraction": 0.1
+  },
+  "job_details": {
+    "metrics": {
+      "caller": "qiskit_ibm_runtime~sampler.py",
+      "qiskit_version": "qiskit_ibm_runtime-0.48.0,qiskit-2.5.1*,qiskit_aer-0.17.2*",
+      "timestamps": {
+        "created": "2026-08-26T12:42:23.142701Z",
+        "finished": "2026-08-26T16:28:35.207124Z",
+        "running": "2026-08-26T15:14:55.497909Z"
+      },
+      "usage": {
+        "qpu_charge_time_seconds": 1337,
+        "status": "complete"
+      },
+      "circuits_execution_time_ns": 1300035242240
+    },
+    "usage_seconds": 1337
+  },
+  "retrieved_at_utc": "2026-08-26T22:46:39.970641+00:00"
+}

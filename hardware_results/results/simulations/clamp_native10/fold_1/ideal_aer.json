@@ -1,0 +1,60 @@
+{
+  "configuration": {
+    "name": "clamp_native10",
+    "dataset": "clamp",
+    "representation": "native",
+    "qubits": 10
+  },
+  "fold": 1,
+  "mode": "ideal_aer",
+  "shots": 512,
+  "metrics": {
+    "accuracy": 0.875,
+    "balanced_accuracy": 0.875,
+    "roc_auc": 0.945,
+    "confusion_matrix": [
+      [
+        36,
+        4
+      ],
+      [
+        6,
+        34
+      ]
+    ],
+    "benign_recall": 0.9,
+    "malware_recall": 0.85
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.1465348035018056,
+    "negative_eigenvalue_count": 16,
+    "negative_eigenvalue_mass": 1.0928628885210299,
+    "projected_minimum_eigenvalue": -1.2364478851551522e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.007353109671740174,
+      "rmse": 0.011101921859309671,
+      "pearson_correlation": 0.9988905064903607,
+      "relative_frobenius_error": 0.04110550654740601
+    },
+    "test": {
+      "mae": 0.006821926956257967,
+      "rmse": 0.010519201342379924,
+      "pearson_correlation": 0.9989675669478482,
+      "relative_frobenius_error": 0.040001103413590325
+    }
+  },
+  "elapsed_seconds": 173.9417416859942,
+  "execution_details": {
+    "circuit": "hardware_results/results/circuits/aer_active_fidelity_10q.qpy",
+    "circuit_metadata": "hardware_results/results/circuits/aer_active_fidelity_10q.json",
+    "noise_model": null,
+    "active_wire_relabeling": true,
+    "simulator_method": "statevector",
+    "shot_branching": false,
+    "parameter_chunk_size": 128,
+    "max_parallel_experiments": "automatic"
+  },
+  "created_at_utc": "2026-08-27T03:14:44.925313+00:00"
+}
