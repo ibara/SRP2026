@@ -1,0 +1,9 @@
+contrast,paired_test_rows,left_only_correct,right_only_correct,mcnemar_exact_p,holm_adjusted_p
+clamp_native10:hardware_vs_exact,240,5,6,1.0,1.0
+clamp_pca4:hardware_vs_exact,240,10,9,1.0,1.0
+fabiana_native8:hardware_vs_exact,240,5,1,0.21875,1.0
+fabiana_pca4:hardware_vs_exact,240,2,0,0.5,1.0
+cic_pca4:hardware_vs_exact,240,1,4,0.375,1.0
+ember2018_pca4:hardware_vs_exact,240,4,3,1.0,1.0
+clamp:hardware_native_vs_pca,240,41,17,0.0022325516199429227,0.01786041295954338
+fabiana:hardware_native_vs_pca,240,9,2,0.0654296875,0.4580078125

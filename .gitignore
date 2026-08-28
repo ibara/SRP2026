@@ -6,3 +6,4 @@ __pycache__/
 # Downloaded datasets are large and/or redistribution-restricted.
 data/*
 !data/README.md
+Sean_CIC_dataset/

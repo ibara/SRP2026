@@ -1,0 +1,26 @@
+{
+  "width": 4,
+  "backend": "ibm_rensselaer",
+  "optimization_level": 3,
+  "transpiler_seed": 42,
+  "depth": 98,
+  "size": 174,
+  "estimated_duration_seconds": 5.307999999999999e-06,
+  "backend_circuit_qubits": 120,
+  "logical_qubits": 4,
+  "operations": {
+    "rz": 88,
+    "sx": 56,
+    "cz": 22,
+    "x": 4,
+    "measure": 4,
+    "barrier": 1
+  },
+  "final_index_layout": [
+    116,
+    106,
+    105,
+    115
+  ],
+  "created_at_utc": "2026-08-26T03:33:51.260052+00:00"
+}

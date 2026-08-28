@@ -1,0 +1,45 @@
+{
+  "configuration": {
+    "name": "fabiana_native8",
+    "dataset": "fabiana",
+    "representation": "native",
+    "qubits": 8
+  },
+  "fold": 3,
+  "training_seed": 404,
+  "train_rows": 100,
+  "test_rows": 100,
+  "train_class_counts": [
+    50,
+    50
+  ],
+  "test_class_counts": [
+    50,
+    50
+  ],
+  "feature_names": [
+    "SizeOfCode",
+    "SizeOfInitializedData",
+    "SizeOfUninitializedData",
+    "AddressOfEntryPoint",
+    "BaseOfData",
+    "ImageBase",
+    "NumberOfSections",
+    "DllCharacteristics"
+  ],
+  "source_pool": "hardware_results/publication_full_v1/prepared/source_pools/fabiana.npz",
+  "archive": "hardware_results/publication_full_v1/prepared/conditions/fabiana_native8/fold_3.npz",
+  "transform": {
+    "imputation": "median fitted on training data only",
+    "all_missing_training_features": 0,
+    "representation": "native",
+    "quantum_feature_range": [
+      0,
+      1
+    ],
+    "range_scaler_clip": true,
+    "test_values_clipped": 13,
+    "test_rows_matching_transformed_train_vector": 0
+  },
+  "created_at_utc": "2026-08-25T22:12:37.426478+00:00"
+}

@@ -1,0 +1,60 @@
+{
+  "configuration": {
+    "name": "fabiana_native8",
+    "dataset": "fabiana",
+    "representation": "native",
+    "qubits": 8
+  },
+  "fold": 1,
+  "mode": "ideal_aer",
+  "shots": 512,
+  "metrics": {
+    "accuracy": 0.975,
+    "balanced_accuracy": 0.975,
+    "roc_auc": 0.953125,
+    "confusion_matrix": [
+      [
+        38,
+        2
+      ],
+      [
+        0,
+        40
+      ]
+    ],
+    "benign_recall": 0.95,
+    "malware_recall": 1.0
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.10503121853211168,
+    "negative_eigenvalue_count": 19,
+    "negative_eigenvalue_mass": 0.8699361610338568,
+    "projected_minimum_eigenvalue": -1.8554630464911883e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.00526077826325074,
+      "rmse": 0.008318910972212955,
+      "pearson_correlation": 0.9994151228538306,
+      "relative_frobenius_error": 0.031349726563547106
+    },
+    "test": {
+      "mae": 0.005345345612078762,
+      "rmse": 0.00846492770758375,
+      "pearson_correlation": 0.9994793623029022,
+      "relative_frobenius_error": 0.029408507134706868
+    }
+  },
+  "elapsed_seconds": 147.15794261801057,
+  "execution_details": {
+    "circuit": "hardware_results/publication_3split_80x80_final_v3/circuits/aer_active_fidelity_8q.qpy",
+    "circuit_metadata": "hardware_results/publication_3split_80x80_final_v3/circuits/aer_active_fidelity_8q.json",
+    "noise_model": null,
+    "active_wire_relabeling": true,
+    "simulator_method": "statevector",
+    "shot_branching": false,
+    "parameter_chunk_size": 128,
+    "max_parallel_experiments": "automatic"
+  },
+  "created_at_utc": "2026-08-27T06:53:08.028150+00:00"
+}

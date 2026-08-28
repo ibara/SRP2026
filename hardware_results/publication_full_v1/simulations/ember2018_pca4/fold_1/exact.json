@@ -1,0 +1,37 @@
+{
+  "configuration": {
+    "name": "ember2018_pca4",
+    "dataset": "ember2018",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 1,
+  "mode": "exact",
+  "shots": null,
+  "metrics": {
+    "accuracy": 0.76,
+    "balanced_accuracy": 0.76,
+    "roc_auc": 0.838,
+    "confusion_matrix": [
+      [
+        31,
+        19
+      ],
+      [
+        5,
+        45
+      ]
+    ],
+    "benign_recall": 0.62,
+    "malware_recall": 0.9
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": 9.004623378209456e-13,
+    "negative_eigenvalue_count": 0,
+    "negative_eigenvalue_mass": 0.0,
+    "projected_minimum_eigenvalue": 9.000794686324489e-13
+  },
+  "kernel_vs_exact": null,
+  "elapsed_seconds": 0.5073969819932245,
+  "created_at_utc": "2026-08-25T22:17:23.373460+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "configuration": {
+    "name": "fabiana_pca4",
+    "dataset": "fabiana",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 4,
+  "mode": "exact",
+  "shots": null,
+  "metrics": {
+    "accuracy": 0.87,
+    "balanced_accuracy": 0.87,
+    "roc_auc": 0.8879999999999999,
+    "confusion_matrix": [
+      [
+        46,
+        4
+      ],
+      [
+        9,
+        41
+      ]
+    ],
+    "benign_recall": 0.92,
+    "malware_recall": 0.82
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": 3.6708162061893355e-15,
+    "negative_eigenvalue_count": 0,
+    "negative_eigenvalue_mass": 0.0,
+    "projected_minimum_eigenvalue": 3.819764046308872e-15
+  },
+  "kernel_vs_exact": null,
+  "elapsed_seconds": 0.41625222700531594,
+  "created_at_utc": "2026-08-25T22:17:19.361857+00:00"
+}

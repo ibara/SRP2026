@@ -1,0 +1,219 @@
+CIC / SAR AND EMBER2018 PCA-4 QUANTUM-KERNEL RESULTS
+Generated: 2026-08-25
+
+Purpose
+-------
+This file is the plain-text record of the corrected simulator experiments run
+before comparison on real quantum hardware. Machine-readable arrays and full
+metadata remain in the JSON, CSV, and NPZ files listed below.
+
+At-a-glance simulator comparison
+--------------------------------
+These scores are references, not a ranking: the datasets, representations,
+qubit counts, split sizes, and duplicate exposure differ.
+
+Workflow                       Qubits  Train/Test  Accuracy  Balanced acc  ROC AUC
+CIC baseline                      4      140/60      0.5667      0.5667      0.6633
+CIC CV-selected                   4      140/60      0.6333      0.6333      0.7644
+EMBER2018 baseline                4      140/60      0.7667      0.7667      0.7411
+EMBER2018 CV-selected             4      140/60      0.7667      0.7667      0.7767
+Fabiana exact reproduction        8      200/100     0.9800      0.9811      0.9908
+
+Existing Allison CLaMP references
+---------------------------------
+- Original Aer notebook: 10 qubits, 200 training/100 testing, saved accuracy
+  0.860. In that subset, 9/100 test rows match a training vector across the ten
+  selected features, so the score may be optimistic.
+- Completed compact hardware run: 10 qubits, 20 training/10 testing, 390 kernel
+  evaluations, 1,024 shots/evaluation on ibm_rensselaer. Hardware accuracy,
+  balanced accuracy, and ROC AUC were all 1.000 on only ten test rows. The exact
+  kernel scored 0.700 accuracy, 0.750 balanced accuracy, and 1.000 ROC AUC.
+  Classical linear and RBF SVCs each scored 0.700 accuracy on that small split.
+- The hardware/exact training- and test-kernel correlations were 0.978 and
+  0.987. This demonstrates feasibility, not quantum advantage; the 10-row
+  result is much too small for a comparative performance claim.
+
+CIC/EMBER common evaluation setup
+---------------------------------
+- Binary labels: 0 = benign, 1 = malware.
+- Balanced sample: 100 benign + 100 malware records.
+- Primary split: 140 training + 60 testing records (70/30), random_state=42,
+  stratified. The CIC 80/20 reproduction is listed separately.
+- Preprocessing is fitted on training data only: median imputation, standard
+  scaling, PCA to 4 components, then feature-range scaling.
+- Baseline quantum model: exact FidelityQuantumKernel with a 4-qubit
+  ZZFeatureMap, reps=2, linear entanglement, feature range [-1, 1], and a
+  precomputed-kernel SVC with C=1.
+- Tuned variants were selected only with five-fold stratified CV on the 140-row
+  outer training split. The 60-row outer test was evaluated after selection.
+
+CIC-YNU-IoT SAR
+---------------
+Input data:
+- ARM, MIPS, MIPSEL, and x86 SAR parquet files.
+- 2,121,949 combined rows.
+- 334 columns shared by all four files; 314 numeric model features.
+- PCA-4 retained 52.2332% of training variance.
+
+Corrected Sean-style baseline (70/30):
+- Accuracy:          0.566667 (34/60)
+- Balanced accuracy: 0.566667
+- ROC AUC:           0.663333 (continuous SVC decision scores)
+- Confusion matrix, rows=true and columns=predicted [benign, malware]:
+  [[19, 11],
+   [15, 15]]
+
+Corrected Sean-style baseline (80/20, matching Sean's written description):
+- Training/testing rows: 160/40
+- Accuracy:          0.550000 (22/40)
+- Balanced accuracy: 0.550000
+- ROC AUC:           0.602500
+- Confusion matrix:
+  [[ 9, 11],
+   [ 7, 13]]
+
+Training-only tuned quantum kernel (70/30):
+- Selected map: feature range [0, 1], reps=1, linear entanglement, C=100.
+- Five-fold CV balanced accuracy: 0.792857 +/- 0.076265
+- Five-fold CV ROC AUC:           0.847959
+- Outer-test accuracy:            0.633333 (38/60)
+- Outer-test balanced accuracy:   0.633333
+- Outer-test ROC AUC:             0.764444
+- Confusion matrix:
+  [[20, 10],
+   [12, 18]]
+- Compared with baseline: 5 errors fixed, 1 new error introduced.
+- Exact two-sided McNemar p-value: 0.218750. The accuracy gain is not
+  statistically significant at alpha=0.05 on this one 60-row test set.
+
+Matched classical checks on the same CIC PCA-4 split (diagnostic only):
+- Linear SVC, C=1: accuracy 0.716667; ROC AUC 0.836667;
+  confusion matrix [[28, 2], [15, 15]].
+- RBF SVC, C=1: accuracy 0.766667; ROC AUC 0.785556;
+  confusion matrix [[23, 7], [7, 23]].
+
+Important historical comparison:
+- The 0.733333 CIC score stored in Sean's original notebook is not a valid
+  comparison result. That notebook changes the training representation after
+  computing K_train and before computing K_test, so its train and test kernel
+  matrices do not describe the same feature vectors.
+
+EMBER2018
+---------
+Input data:
+- EMBER 2018 v2 flattened-feature parquet.
+- 799,912 rows x 2,382 columns; 2,381 numeric features plus Label.
+- Label counts: 299,991 benign, 299,929 malware, 199,992 unlabeled/excluded.
+- PCA-4 retained 22.8433% of training variance.
+
+Sean-style baseline reproduced exactly (70/30):
+- Accuracy:          0.766667 (46/60)
+- Balanced accuracy: 0.766667
+- ROC AUC:           0.741111 (continuous SVC decision scores)
+- Confusion matrix:
+  [[21,  9],
+   [ 5, 25]]
+
+Training-only tuned quantum kernel (70/30):
+- Selected map: feature range [0, 1], reps=1, full entanglement, C=10.
+- Five-fold CV balanced accuracy: 0.828571 +/- 0.099488
+- Five-fold CV ROC AUC:           0.844898
+- Outer-test accuracy:            0.766667 (46/60)
+- Outer-test balanced accuracy:   0.766667
+- Outer-test ROC AUC:             0.776667
+- Confusion matrix:
+  [[22,  8],
+   [ 6, 24]]
+- Compared with baseline: 3 errors fixed, 3 new errors introduced.
+- Exact two-sided McNemar p-value: 1.000000. Accuracy did not change.
+
+Matched classical checks on the same EMBER PCA-4 split (diagnostic only):
+- Linear SVC, C=1: accuracy 0.750000; ROC AUC 0.754444;
+  confusion matrix [[23, 7], [8, 22]].
+- RBF SVC, C=1: accuracy 0.766667; ROC AUC 0.825556;
+  confusion matrix [[18, 12], [2, 28]].
+
+Validation performed
+--------------------
+- All saved train kernels are finite, symmetric, and have unit diagonals.
+- Each tuning sweep evaluated exactly 32 candidates.
+- The exact statevector implementation used for fast tuning matched Qiskit's
+  FidelityQuantumKernel baseline to less than 1e-10 maximum absolute error:
+  CIC 7.14e-12; EMBER2018 7.36e-12.
+- No test vector exactly matched a training vector after imputation in either
+  corrected PCA-4 experiment.
+
+Fabiana update
+--------------
+- GitHub notebook received as fabiana.ipynb on 2026-08-25.
+- Its saved output reports 0.980000 accuracy on a 200-train/100-test subset.
+- The committed notebook remains byte-for-byte unchanged.
+- The full shot-based Aer kernel was attempted locally without changing its
+  200/100 sample sizes. Its kernel cell exceeded the 1,800-second limit, used
+  5,966.25 user CPU seconds, and peaked at 5,868,080 KiB resident memory. It did
+  not save a new metric.
+- Fabiana Quantum Reproducible.ipynb keeps the same split, eight selected
+  features, eight-qubit ZZFeatureMap (reps=2, linear), and C=1 SVC. It changes
+  the CSV path to the repository-relative copy, fixes ROC AUC to use continuous
+  decision scores, and replaces finite-shot Aer sampling with the mathematically
+  corresponding exact FidelityStatevectorKernel.
+- Exact reproduction runtime: 2 minutes 44 seconds; maximum notebook-process
+  resident memory: 318,044 KiB.
+- Exact-kernel accuracy:          0.980000 (98/100)
+- Exact-kernel balanced accuracy: 0.981132
+- Exact-kernel ROC AUC:           0.9908 (notebook display precision)
+- Confusion matrix:
+  [[47,  0],
+   [ 2, 51]]
+- The exact result reproduces the original saved accuracy and confusion matrix.
+
+Fabiana split audit and matched classical checks:
+- Source labels: 583 benign and 573 malware.
+- Subset labels: training 96 benign/104 malware; testing 47 benign/53 malware.
+- Filenames are unique, but 311 source rows belong to duplicate groups under
+  the selected eight-feature representation.
+- 12/100 test feature vectors exactly match a vector in the 200-row training
+  subset; all 12 are malware and their matching training labels are malware.
+  This representation-level overlap can make the one-split score optimistic.
+- Logistic regression: accuracy 0.590000; balanced accuracy 0.589121;
+  ROC AUC 0.812124; confusion matrix [[27,20],[21,32]].
+- Linear SVC: accuracy 0.610000; balanced accuracy 0.606784;
+  ROC AUC 0.816941; confusion matrix [[26,21],[18,35]].
+- RBF SVC: accuracy 0.910000; balanced accuracy 0.915094;
+  ROC AUC 0.973103; confusion matrix [[47,0],[9,44]].
+
+Result artifacts
+----------------
+- results/cic_pca4_exact_seed42/summary.json
+- results/cic_pca4_exact_seed42/results.npz
+- results/cic_pca4_exact_80_20_seed42/summary.json
+- results/cic_pca4_exact_80_20_seed42/results.npz
+- results/cic_pca4_kernel_sweep_seed42/summary.json
+- results/cic_pca4_kernel_sweep_seed42/cv_results.csv
+- results/cic_pca4_kernel_sweep_seed42/selected_kernel_results.npz
+- results/ember2018_pca4_exact_seed42/summary.json
+- results/ember2018_pca4_exact_seed42/results.npz
+- results/ember2018_pca4_kernel_sweep_seed42/summary.json
+- results/ember2018_pca4_kernel_sweep_seed42/cv_results.csv
+- results/ember2018_pca4_kernel_sweep_seed42/selected_kernel_results.npz
+- Fabiana Quantum Reproducible.ipynb (locally executed exact-kernel output)
+- results/experiment_results.txt (this consolidated plain-text record)
+
+Interpretation and hardware caveats
+-----------------------------------
+- These are single small outer-test splits, not final population estimates.
+- The outer test records had already appeared in project results, so they are
+  not pristine at the project level even though tuning did not use them.
+- The tuning CV treats the PCA representation fitted on all outer-training rows
+  as fixed. A publication-grade nested estimate should refit preprocessing in
+  every inner fold.
+- Exact simulator kernels are probability fidelities. Hardware kernels will be
+  affected by finite shots, transpilation, readout/gate noise, calibration time,
+  and backend topology. Record backend, qubit layout, job IDs, shots, circuit
+  depth/two-qubit count, mitigation, and run timestamps for every comparison.
+- Fabiana's 200/100 kernel needs about 39,900 nontrivial symmetric train/test
+  fidelity evaluations before shots. Use the compact matched hardware protocol
+  first; do not submit this full matrix as an initial hardware job.
+- For CIC and EMBER, take only the declared baseline and CV-selected circuits
+  into hardware comparison. Do not rerun the complete 32-candidate selection
+  grid on the QPU; selection has already been performed on exact training data.

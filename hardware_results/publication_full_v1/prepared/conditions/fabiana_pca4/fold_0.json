@@ -1,0 +1,54 @@
+{
+  "configuration": {
+    "name": "fabiana_pca4",
+    "dataset": "fabiana",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 0,
+  "training_seed": 101,
+  "train_rows": 100,
+  "test_rows": 100,
+  "train_class_counts": [
+    50,
+    50
+  ],
+  "test_class_counts": [
+    50,
+    50
+  ],
+  "feature_names": [
+    "SizeOfCode",
+    "SizeOfInitializedData",
+    "SizeOfUninitializedData",
+    "AddressOfEntryPoint",
+    "BaseOfData",
+    "ImageBase",
+    "NumberOfSections",
+    "DllCharacteristics"
+  ],
+  "source_pool": "hardware_results/publication_full_v1/prepared/source_pools/fabiana.npz",
+  "archive": "hardware_results/publication_full_v1/prepared/conditions/fabiana_pca4/fold_0.npz",
+  "transform": {
+    "imputation": "median fitted on training data only",
+    "all_missing_training_features": 0,
+    "representation": "pca",
+    "standard_scaling": "fitted on training data only",
+    "pca_components": 4,
+    "pca_explained_variance_ratio": [
+      0.39152992357448263,
+      0.21142582807547616,
+      0.16436351958940237,
+      0.09896071859093143
+    ],
+    "pca_explained_variance_ratio_sum": 0.8662799898302928,
+    "quantum_feature_range": [
+      0,
+      1
+    ],
+    "range_scaler_clip": true,
+    "test_values_clipped": 19,
+    "test_rows_matching_transformed_train_vector": 0
+  },
+  "created_at_utc": "2026-08-25T22:12:37.830891+00:00"
+}

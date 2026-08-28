@@ -1,0 +1,60 @@
+{
+  "configuration": {
+    "name": "cic_pca4",
+    "dataset": "cic",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 1,
+  "mode": "noisy_aer",
+  "shots": 512,
+  "metrics": {
+    "accuracy": 0.6875,
+    "balanced_accuracy": 0.6875,
+    "roc_auc": 0.7300000000000001,
+    "confusion_matrix": [
+      [
+        31,
+        9
+      ],
+      [
+        16,
+        24
+      ]
+    ],
+    "benign_recall": 0.775,
+    "malware_recall": 0.6
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.16241830243316902,
+    "negative_eigenvalue_count": 16,
+    "negative_eigenvalue_mass": 1.0528502219796605,
+    "projected_minimum_eigenvalue": -1.428068062919682e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.017744228279140465,
+      "rmse": 0.026095834772102866,
+      "pearson_correlation": 0.9984137520157064,
+      "relative_frobenius_error": 0.07131760980064333
+    },
+    "test": {
+      "mae": 0.01849283208896471,
+      "rmse": 0.02692854807643776,
+      "pearson_correlation": 0.9985491770503385,
+      "relative_frobenius_error": 0.06988056217884314
+    }
+  },
+  "elapsed_seconds": 1454.4621939740027,
+  "execution_details": {
+    "circuit": "hardware_results/publication_3split_80x80_final_v3/circuits/aer_active_fidelity_4q.qpy",
+    "circuit_metadata": "hardware_results/publication_3split_80x80_final_v3/circuits/aer_active_fidelity_4q.json",
+    "noise_model": "hardware_results/publication_3split_80x80_final_v3/circuits/aer_active_noise_model_4q.json",
+    "active_wire_relabeling": true,
+    "simulator_method": "statevector",
+    "shot_branching": true,
+    "parameter_chunk_size": 128,
+    "max_parallel_experiments": 1
+  },
+  "created_at_utc": "2026-08-27T10:16:08.709913+00:00"
+}

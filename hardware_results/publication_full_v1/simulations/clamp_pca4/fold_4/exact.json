@@ -1,0 +1,37 @@
+{
+  "configuration": {
+    "name": "clamp_pca4",
+    "dataset": "clamp",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 4,
+  "mode": "exact",
+  "shots": null,
+  "metrics": {
+    "accuracy": 0.77,
+    "balanced_accuracy": 0.77,
+    "roc_auc": 0.8724000000000001,
+    "confusion_matrix": [
+      [
+        33,
+        17
+      ],
+      [
+        6,
+        44
+      ]
+    ],
+    "benign_recall": 0.66,
+    "malware_recall": 0.88
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": 1.7312147052985208e-14,
+    "negative_eigenvalue_count": 0,
+    "negative_eigenvalue_mass": 0.0,
+    "projected_minimum_eigenvalue": 1.7037370895497342e-14
+  },
+  "kernel_vs_exact": null,
+  "elapsed_seconds": 0.44808247798937373,
+  "created_at_utc": "2026-08-25T22:17:12.144521+00:00"
+}

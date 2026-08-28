@@ -1,0 +1,16 @@
+train_rows,test_rows,logical_qubits,kernel_evaluations,shots_per_evaluation,total_circuit_shots,gates_per_circuit,total_gate_applications,cz_per_circuit,total_cz_applications,projected_qpu_seconds,projection_note
+80,80,4,9560,512,4894720,174,851681280,22,107683840,1337.0,Linear extrapolation from observed median; not a measured run
+80,80,8,9560,512,4894720,400,1957888000,54,264314880,1348.0,Linear extrapolation from observed median; not a measured run
+80,80,10,9560,512,4894720,518,2535464960,70,342630400,1354.0,Linear extrapolation from observed median; not a measured run
+100,100,4,14950,512,7654400,174,1331865600,22,168396800,2090.810669456067,Linear extrapolation from observed median; not a measured run
+100,100,8,14950,512,7654400,400,3061760000,54,413337600,2108.0125523012553,Linear extrapolation from observed median; not a measured run
+100,100,10,14950,512,7654400,518,3964979200,70,535808000,2117.39539748954,Linear extrapolation from observed median; not a measured run
+500,500,4,374750,512,191872000,174,33385728000,22,4221184000,52410.120292887026,Linear extrapolation from observed median; not a measured run
+500,500,8,374750,512,191872000,400,76748800000,54,10361088000,52841.3179916318,Linear extrapolation from observed median; not a measured run
+500,500,10,374750,512,191872000,518,99389696000,70,13431040000,53076.516736401674,Linear extrapolation from observed median; not a measured run
+1000,1000,4,1499500,512,767744000,174,133587456000,22,16890368000,209710.4079497908,Linear extrapolation from observed median; not a measured run
+1000,1000,8,1499500,512,767744000,400,307097600000,54,41458176000,211435.7740585774,Linear extrapolation from observed median; not a measured run
+1000,1000,10,1499500,512,767744000,518,397691392000,70,53742080000,212376.8828451883,Linear extrapolation from observed median; not a measured run
+5000,1000,4,17497500,512,8958720000,174,1558817280000,22,197091840000,2447087.6046025106,Linear extrapolation from observed median; not a measured run
+5000,1000,8,17497500,512,8958720000,400,3583488000000,54,483770880000,2467220.711297071,Linear extrapolation from observed median; not a measured run
+5000,1000,10,17497500,512,8958720000,518,4640616960000,70,627110400000,2478202.4058577404,Linear extrapolation from observed median; not a measured run

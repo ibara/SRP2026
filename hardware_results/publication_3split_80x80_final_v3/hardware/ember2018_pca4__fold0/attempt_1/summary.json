@@ -1,0 +1,104 @@
+{
+  "condition": {
+    "condition_id": "ember2018_pca4__fold0",
+    "configuration": "ember2018_pca4",
+    "dataset": "ember2018",
+    "representation": "pca",
+    "qubits": 4,
+    "fold": 0,
+    "repeat": 0,
+    "anchor": false,
+    "order": 4,
+    "attempts": [
+      {
+        "attempt": 1,
+        "job_id": "da7dua3sq5js73bjrdrg",
+        "batch_id": "7f298afd-4452-4e66-814a-999eca99dbbd",
+        "submitted_at_utc": "2026-08-26T12:42:16.617164+00:00",
+        "status": "DONE",
+        "shots": 512,
+        "train_evaluations": 3160,
+        "test_evaluations": 6400,
+        "total_executions": 4894720,
+        "directory": "hardware_results/publication_3split_80x80_final_v3/hardware/ember2018_pca4__fold0/attempt_1",
+        "status_checked_at_utc": "2026-08-26T22:46:03.634848+00:00"
+      }
+    ]
+  },
+  "attempt": {
+    "attempt": 1,
+    "job_id": "da7dua3sq5js73bjrdrg",
+    "batch_id": "7f298afd-4452-4e66-814a-999eca99dbbd",
+    "submitted_at_utc": "2026-08-26T12:42:16.617164+00:00",
+    "status": "DONE",
+    "shots": 512,
+    "train_evaluations": 3160,
+    "test_evaluations": 6400,
+    "total_executions": 4894720,
+    "directory": "hardware_results/publication_3split_80x80_final_v3/hardware/ember2018_pca4__fold0/attempt_1",
+    "status_checked_at_utc": "2026-08-26T22:46:03.634848+00:00"
+  },
+  "configuration": {
+    "name": "ember2018_pca4",
+    "dataset": "ember2018",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "mode": "hardware",
+  "metrics": {
+    "accuracy": 0.5875,
+    "balanced_accuracy": 0.5875,
+    "roc_auc": 0.72625,
+    "confusion_matrix": [
+      [
+        12,
+        28
+      ],
+      [
+        5,
+        35
+      ]
+    ],
+    "benign_recall": 0.3,
+    "malware_recall": 0.875
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.139505379736328,
+    "negative_eigenvalue_count": 17,
+    "negative_eigenvalue_mass": 1.0461985699511684,
+    "projected_minimum_eigenvalue": -1.492508796625034e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.033453307965309646,
+      "rmse": 0.047695790872406996,
+      "pearson_correlation": 0.9984914968930602,
+      "relative_frobenius_error": 0.09988737088121633
+    },
+    "test": {
+      "mae": 0.03172230660244715,
+      "rmse": 0.04565189426602679,
+      "pearson_correlation": 0.9981803075717681,
+      "relative_frobenius_error": 0.09598809442745831
+    },
+    "prediction_disagreement_fraction": 0.0125
+  },
+  "job_details": {
+    "metrics": {
+      "caller": "qiskit_ibm_runtime~sampler.py",
+      "qiskit_version": "qiskit_ibm_runtime-0.48.0,qiskit-2.5.1*,qiskit_aer-0.17.2*",
+      "timestamps": {
+        "created": "2026-08-26T12:42:16.433129Z",
+        "finished": "2026-08-26T14:50:35.166832Z",
+        "running": "2026-08-26T13:35:17.35356Z"
+      },
+      "usage": {
+        "qpu_charge_time_seconds": 1337,
+        "status": "complete"
+      },
+      "circuits_execution_time_ns": 1300035242496
+    },
+    "usage_seconds": 1337
+  },
+  "retrieved_at_utc": "2026-08-26T22:46:24.871925+00:00"
+}

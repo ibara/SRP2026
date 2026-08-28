@@ -1,0 +1,201 @@
+SRP2026 PUBLICATION QUANTUM-KERNEL HARDWARE RESULTS
+=========================================================
+Generated (UTC): 2026-08-27T22:02:45.080229+00:00
+
+SCOPE
+-----
+Controlled small-sample NISQ hardware study of representation compression,
+kernel geometry, and execution noise in malware classification. These results
+do not demonstrate quantum advantage or full-corpus detector performance.
+
+FROZEN PROTOCOL
+---------------
+Configurations: 6
+Folds per configuration: 3
+Rows per split: 80 train / 80 test (40/40 by class)
+Feature map: zz_feature_map, reps=2, entanglement=linear
+Classifier: precomputed SVC(C=1)
+Shot-based modes: 512 shots; mitigation disabled
+Execution ladder: exact -> ideal_aer -> noisy_aer -> hardware
+
+PROCEDURAL NOTE
+---------------
+At the user's request, hardware submission began after every prepared split
+and exact kernel passed validation but before the ideal/noisy Aer ladder
+finished locally. Inputs, circuits, shots, seeds, and the hardware schedule
+were already frozen; no condition was tuned after observing hardware results.
+
+HARDWARE WORKLOAD
+-----------------
+evaluations_per_condition: 9,560
+executions_per_condition: 4,894,720
+primary_hardware_conditions: 18
+repeat_anchor_conditions: 3
+hardware_condition_runs: 21
+total_hardware_evaluations: 200,760
+total_hardware_executions: 102,789,120
+
+DESCRIPTIVE CIRCUIT-COST ASSOCIATIONS (18 primary runs)
+--------------------------------------------------------
+These repeated-width correlations are descriptive and confounded by dataset
+and representation; they are not an independent circuit-depth experiment.
+CZ count vs test relative Frobenius error: Pearson r=0.8574, Spearman rho=0.8124
+CZ count vs hardware-minus-exact balanced accuracy: Pearson r=-0.0316, Spearman rho=-0.1294
+
+PRIMARY QUANTUM RESULTS (mean +/- fold SD; primary runs only)
+------------------------------------------------------------
+configuration | mode | balanced accuracy | ROC AUC | test rel. error | test correlation
+clamp_native10 | exact | 0.8417 +/- 0.0505 | 0.9260 +/- 0.0289 | 0.0000 | 1.0000
+clamp_native10 | ideal_aer | 0.8417 +/- 0.0382 | 0.9233 +/- 0.0202 | 0.0438 | 0.9989
+clamp_native10 | noisy_aer | 0.8500 +/- 0.0573 | 0.9217 +/- 0.0249 | 0.2766 | 0.9943
+clamp_native10 | hardware | 0.8458 +/- 0.0191 | 0.9152 +/- 0.0275 | 0.4788 | 0.9705
+clamp_pca4 | exact | 0.7500 +/- 0.0375 | 0.8390 +/- 0.0217 | 0.0000 | 1.0000
+clamp_pca4 | ideal_aer | 0.7417 +/- 0.0382 | 0.8350 +/- 0.0179 | 0.0352 | 0.9984
+clamp_pca4 | noisy_aer | 0.7542 +/- 0.0382 | 0.8406 +/- 0.0173 | 0.0705 | 0.9981
+clamp_pca4 | hardware | 0.7458 +/- 0.0505 | 0.8167 +/- 0.0138 | 0.1118 | 0.9958
+fabiana_native8 | exact | 0.9750 +/- 0.0125 | 0.9821 +/- 0.0202 | 0.0000 | 1.0000
+fabiana_native8 | ideal_aer | 0.9750 +/- 0.0125 | 0.9790 +/- 0.0232 | 0.0287 | 0.9995
+fabiana_native8 | noisy_aer | 0.9750 +/- 0.0125 | 0.9804 +/- 0.0163 | 0.2138 | 0.9958
+fabiana_native8 | hardware | 0.9583 +/- 0.0289 | 0.9800 +/- 0.0169 | 0.4414 | 0.9235
+fabiana_pca4 | exact | 0.9375 +/- 0.0000 | 0.9627 +/- 0.0036 | 0.0000 | 1.0000
+fabiana_pca4 | ideal_aer | 0.9333 +/- 0.0072 | 0.9573 +/- 0.0087 | 0.0303 | 0.9992
+fabiana_pca4 | noisy_aer | 0.9375 +/- 0.0000 | 0.9577 +/- 0.0016 | 0.0708 | 0.9989
+fabiana_pca4 | hardware | 0.9292 +/- 0.0072 | 0.9613 +/- 0.0056 | 0.1140 | 0.9971
+cic_pca4 | exact | 0.6917 +/- 0.0289 | 0.7800 +/- 0.0117 | 0.0000 | 1.0000
+cic_pca4 | ideal_aer | 0.7042 +/- 0.0315 | 0.7779 +/- 0.0198 | 0.0355 | 0.9990
+cic_pca4 | noisy_aer | 0.6958 +/- 0.0260 | 0.7548 +/- 0.0275 | 0.0708 | 0.9988
+cic_pca4 | hardware | 0.7042 +/- 0.0439 | 0.7771 +/- 0.0357 | 0.1115 | 0.9973
+ember2018_pca4 | exact | 0.6167 +/- 0.0144 | 0.7412 +/- 0.0245 | 0.0000 | 1.0000
+ember2018_pca4 | ideal_aer | 0.6250 +/- 0.0331 | 0.7294 +/- 0.0350 | 0.0294 | 0.9991
+ember2018_pca4 | noisy_aer | 0.6250 +/- 0.0250 | 0.7302 +/- 0.0232 | 0.0692 | 0.9988
+ember2018_pca4 | hardware | 0.6125 +/- 0.0250 | 0.7225 +/- 0.0160 | 0.1114 | 0.9966
+
+FOLD-STRATIFIED BALANCED-ACCURACY BOOTSTRAP INTERVALS
+-----------------------------------------------------
+configuration | mode | estimate | 95% interval | total test rows
+cic_pca4 | exact | 0.6917 | [0.6333, 0.7458] | 240
+cic_pca4 | ideal_aer | 0.7042 | [0.6458, 0.7625] | 240
+cic_pca4 | noisy_aer | 0.6958 | [0.6375, 0.7542] | 240
+cic_pca4 | hardware | 0.7042 | [0.6458, 0.7583] | 240
+clamp_native10 | exact | 0.8417 | [0.7958, 0.8833] | 240
+clamp_native10 | ideal_aer | 0.8417 | [0.7958, 0.8875] | 240
+clamp_native10 | noisy_aer | 0.8500 | [0.8042, 0.8917] | 240
+clamp_native10 | hardware | 0.8458 | [0.8000, 0.8876] | 240
+clamp_pca4 | exact | 0.7500 | [0.6958, 0.8042] | 240
+clamp_pca4 | ideal_aer | 0.7417 | [0.6875, 0.7958] | 240
+clamp_pca4 | noisy_aer | 0.7542 | [0.7000, 0.8042] | 240
+clamp_pca4 | hardware | 0.7458 | [0.6917, 0.8000] | 240
+ember2018_pca4 | exact | 0.6167 | [0.5583, 0.6708] | 240
+ember2018_pca4 | ideal_aer | 0.6250 | [0.5708, 0.6792] | 240
+ember2018_pca4 | noisy_aer | 0.6250 | [0.5708, 0.6792] | 240
+ember2018_pca4 | hardware | 0.6125 | [0.5583, 0.6667] | 240
+fabiana_native8 | exact | 0.9750 | [0.9542, 0.9917] | 240
+fabiana_native8 | ideal_aer | 0.9750 | [0.9542, 0.9917] | 240
+fabiana_native8 | noisy_aer | 0.9750 | [0.9542, 0.9917] | 240
+fabiana_native8 | hardware | 0.9583 | [0.9333, 0.9792] | 240
+fabiana_pca4 | exact | 0.9375 | [0.9042, 0.9667] | 240
+fabiana_pca4 | ideal_aer | 0.9333 | [0.9000, 0.9625] | 240
+fabiana_pca4 | noisy_aer | 0.9375 | [0.9042, 0.9667] | 240
+fabiana_pca4 | hardware | 0.9292 | [0.8958, 0.9583] | 240
+
+CLASSICAL SANITY CHECKS (mean +/- fold SD)
+-----------------------------------------
+configuration | kernel | balanced accuracy | ROC AUC
+clamp_native10 | linear | 0.7167 +/- 0.0191 | 0.8171 +/- 0.0084
+clamp_native10 | rbf | 0.8542 +/- 0.0191 | 0.8973 +/- 0.0156
+clamp_pca4 | linear | 0.5917 +/- 0.0505 | 0.7344 +/- 0.0682
+clamp_pca4 | rbf | 0.7542 +/- 0.0520 | 0.8254 +/- 0.0894
+fabiana_native8 | linear | 0.9125 +/- 0.0125 | 0.9333 +/- 0.0333
+fabiana_native8 | rbf | 0.9167 +/- 0.0072 | 0.9427 +/- 0.0348
+fabiana_pca4 | linear | 0.8792 +/- 0.0191 | 0.9052 +/- 0.0349
+fabiana_pca4 | rbf | 0.9208 +/- 0.0191 | 0.9717 +/- 0.0110
+cic_pca4 | linear | 0.6875 +/- 0.0451 | 0.7815 +/- 0.0497
+cic_pca4 | rbf | 0.7083 +/- 0.0382 | 0.7965 +/- 0.0197
+ember2018_pca4 | linear | 0.6208 +/- 0.1155 | 0.7710 +/- 0.0182
+ember2018_pca4 | rbf | 0.6750 +/- 0.0125 | 0.7567 +/- 0.0100
+
+ANCHOR HARDWARE REPEATABILITY (two measurements of split 0)
+------------------------------------------------------------
+configuration | qubits | balanced accuracy mean +/- SD | test error mean +/- SD | QPU seconds mean +/- SD
+clamp_pca4 | 4 | 0.7313 +/- 0.0088 | 0.1247 +/- 0.0216 | 1337.000 +/- 0.000
+fabiana_native8 | 8 | 0.9563 +/- 0.0442 | 0.5576 +/- 0.2679 | 1348.000 +/- 0.000
+clamp_native10 | 10 | 0.8313 +/- 0.0088 | 0.5339 +/- 0.0460 | 1354.000 +/- 0.000
+
+NATIVE/PCA PAIRED EFFECTS (mean and descriptive 3-split t interval)
+--------------------------------------------------------------------
+dataset | effect | mean | 95% interval
+clamp | exact_pca_minus_native | -0.0917 | [-0.1915, 0.0082]
+clamp | hardware_pca_minus_native | -0.1000 | [-0.2120, 0.0120]
+clamp | native_hardware_minus_exact | 0.0042 | [-0.1213, 0.1297]
+clamp | pca_hardware_minus_exact | -0.0042 | [-0.1297, 0.1213]
+clamp | difference_in_differences | -0.0083 | [-0.1981, 0.1814]
+fabiana | exact_pca_minus_native | -0.0375 | [-0.0686, -0.0064]
+fabiana | hardware_pca_minus_native | -0.0292 | [-0.1188, 0.0605]
+fabiana | native_hardware_minus_exact | -0.0167 | [-0.1165, 0.0832]
+fabiana | pca_hardware_minus_exact | -0.0083 | [-0.0263, 0.0096]
+fabiana | difference_in_differences | 0.0083 | [-0.1092, 0.1259]
+
+PLANNED EXACT MCNEMAR CONTRASTS (Holm-adjusted)
+------------------------------------------------
+contrast | paired rows | left-only correct | right-only correct | raw p | adjusted p
+clamp_native10:hardware_vs_exact | 240 | 5 | 6 | 1.000000 | 1.000000
+clamp_pca4:hardware_vs_exact | 240 | 10 | 9 | 1.000000 | 1.000000
+fabiana_native8:hardware_vs_exact | 240 | 5 | 1 | 0.218750 | 1.000000
+fabiana_pca4:hardware_vs_exact | 240 | 2 | 0 | 0.500000 | 1.000000
+cic_pca4:hardware_vs_exact | 240 | 1 | 4 | 0.375000 | 1.000000
+ember2018_pca4:hardware_vs_exact | 240 | 4 | 3 | 1.000000 | 1.000000
+clamp:hardware_native_vs_pca | 240 | 41 | 17 | 0.002233 | 0.017860
+fabiana:hardware_native_vs_pca | 240 | 9 | 2 | 0.065430 | 0.458008
+
+HARDWARE COMPLETION
+-------------------
+Successful retrieved conditions: 21 / 21
+Total submitted attempts: 21
+Failed/cancelled attempts: 0
+Total reported QPU usage (seconds): 28189.000
+condition | attempt | job ID | QPU seconds | status
+clamp_native10__fold0 | 1 | da7du86sidac73af8l4g | 1354.000 | DONE
+clamp_pca4__fold0 | 1 | da7du8m0ukec73836ch0 | 1337.000 | DONE
+fabiana_native8__fold0 | 1 | da7du96sidac73af8l6g | 1348.000 | DONE
+cic_pca4__fold1 | 1 | da7du9m0ukec73836cig | 1337.000 | DONE
+ember2018_pca4__fold0 | 1 | da7dua3sq5js73bjrdrg | 1337.000 | DONE
+fabiana_native8__fold1 | 1 | da7duak6l22c73dnflsg | 1348.000 | DONE
+fabiana_native8__fold2 | 1 | da7duarsq5js73bjrdtg | 1348.000 | DONE
+fabiana_pca4__fold0 | 1 | da7dubesidac73af8lcg | 1337.000 | DONE
+clamp_pca4__fold1 | 1 | da7dubm0ukec73836cmg | 1337.000 | DONE
+fabiana_pca4__fold1 | 1 | da7duc3sq5js73bjrdv0 | 1337.000 | DONE
+clamp_native10__fold1 | 1 | da7duck6l22c73dnflv0 | 1354.000 | DONE
+cic_pca4__fold0 | 1 | da7dud46l22c73dnfm00 | 1337.000 | DONE
+clamp_pca4__fold2 | 1 | da7mj7rsq5js73bk50i0 | 1337.000 | DONE
+ember2018_pca4__fold2 | 1 | da7mj8c6l22c73dnpdq0 | 1337.000 | DONE
+fabiana_pca4__fold2 | 1 | da7mj8rsq5js73bk50jg | 1337.000 | DONE
+ember2018_pca4__fold1 | 1 | da7mj9bsq5js73bk50kg | 1337.000 | DONE
+cic_pca4__fold2 | 1 | da7mj9u0ukec7383g060 | 1337.000 | DONE
+clamp_native10__fold2 | 1 | da7mja6sidac73afi320 | 1354.000 | DONE
+clamp_native10__fold0__repeat1 | 1 | da7mjajsq5js73bk50mg | 1354.000 | DONE
+clamp_pca4__fold0__repeat1 | 1 | da7mjb60ukec7383g08g | 1337.000 | DONE
+fabiana_native8__fold0__repeat1 | 1 | da7mjbmsidac73afi33g | 1348.000 | DONE
+
+CIRCUIT RESOURCES
+-----------------
+logical qubits | depth | CZ per circuit | estimated circuit seconds
+4 | 98 | 22 | 0.000005308
+8 | 170 | 54 | 0.000007524
+10 | 206 | 70 | 0.000008660
+
+OUTPUT INDEX
+------------
+run_metrics.csv: one row per quantum condition/mode/repeat
+predictions.csv: one row per held-out prediction
+bootstrap_intervals.csv: 10,000-replicate within-fold/class intervals
+planned_mcnemar_contrasts.csv: paired tests and Holm adjustment
+compression_effects_by_fold.csv and compression_effects_summary.csv
+classical_baselines.csv and aggregate_classical_baselines.csv
+anchor_repeat_summary.csv: 4q/8q/10q hardware repeatability
+circuit_resources.csv and resource_scaling_estimates.csv
+hardware_jobs.csv: every submitted attempt and traceability metadata
+tables/*.tex: captioned LaTeX publication tables
+figure_captions.tex: LaTeX figure environments, captions, and labels
+figure1_noise_ladder_balanced_accuracy.[png|pdf|svg]
+figure2_kernel_distortion.[png|pdf|svg]
+figure3_circuit_cost_vs_degradation.[png|pdf|svg]
