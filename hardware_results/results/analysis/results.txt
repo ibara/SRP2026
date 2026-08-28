@@ -1,14 +1,9 @@
 SRP2026 QUANTUM-KERNEL HARDWARE RESULTS
 =========================================================
-Generated (UTC): 2026-08-27T22:02:45.080229+00:00
+2026-08-27T22:02:45.080229+00:00
 
-SCOPE
------
-Controlled small-sample NISQ hardware study of representation compression,
-kernel geometry, and execution noise in malware classification. These results
-do not demonstrate quantum advantage or full-corpus detector performance.
 
-FROZEN PROTOCOL
+PROTOCOL
 ---------------
 Configurations: 6
 Folds per configuration: 3
@@ -18,12 +13,6 @@ Classifier: precomputed SVC(C=1)
 Shot-based modes: 512 shots; mitigation disabled
 Execution ladder: exact -> ideal_aer -> noisy_aer -> hardware
 
-PROCEDURAL NOTE
----------------
-At the user's request, hardware submission began after every prepared split
-and exact kernel passed validation but before the ideal/noisy Aer ladder
-finished locally. Inputs, circuits, shots, seeds, and the hardware schedule
-were already frozen; no condition was tuned after observing hardware results.
 
 HARDWARE WORKLOAD
 -----------------
