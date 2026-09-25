@@ -1,0 +1,50 @@
+{
+  "configuration": {
+    "name": "clamp_native10",
+    "dataset": "clamp",
+    "representation": "native",
+    "qubits": 10
+  },
+  "fold": 0,
+  "mode": "ideal_aer",
+  "shots": 512,
+  "metrics": {
+    "accuracy": 0.85,
+    "balanced_accuracy": 0.8500000000000001,
+    "roc_auc": 0.9199999999999999,
+    "confusion_matrix": [
+      [
+        36,
+        4
+      ],
+      [
+        8,
+        32
+      ]
+    ],
+    "benign_recall": 0.9,
+    "malware_recall": 0.8
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": -0.07124936435167234,
+    "negative_eigenvalue_count": 10,
+    "negative_eigenvalue_mass": 0.3554848702810508,
+    "projected_minimum_eigenvalue": -1.110400071703844e-15
+  },
+  "kernel_vs_exact": {
+    "train_off_diagonal": {
+      "mae": 0.004856644103828652,
+      "rmse": 0.008346599117145938,
+      "pearson_correlation": 0.9987521362095144,
+      "relative_frobenius_error": 0.046406310459071884
+    },
+    "test": {
+      "mae": 0.004422396841647325,
+      "rmse": 0.007972423450207166,
+      "pearson_correlation": 0.9988447193411792,
+      "relative_frobenius_error": 0.04497465695374692
+    }
+  },
+  "elapsed_seconds": 416.81761158199515,
+  "created_at_utc": "2026-08-26T03:41:26.213528+00:00"
+}

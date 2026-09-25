@@ -1,0 +1,56 @@
+{
+  "configuration": {
+    "name": "clamp_pca4",
+    "dataset": "clamp",
+    "representation": "pca",
+    "qubits": 4
+  },
+  "fold": 0,
+  "training_seed": 101,
+  "train_rows": 80,
+  "test_rows": 80,
+  "train_class_counts": [
+    40,
+    40
+  ],
+  "test_class_counts": [
+    40,
+    40
+  ],
+  "feature_names": [
+    "NumberOfSections",
+    "Characteristics",
+    "Magic",
+    "MajorLinkerVersion",
+    "SizeOfCode",
+    "AddressOfEntryPoint",
+    "ImageBase",
+    "SizeOfImage",
+    "DllCharacteristics",
+    "SizeOfStackReserve"
+  ],
+  "source_pool": "hardware_results/results/prepared/source_pools/clamp.npz",
+  "archive": "hardware_results/results/prepared/conditions/clamp_pca4/fold_0.npz",
+  "transform": {
+    "imputation": "median fitted on training data only",
+    "all_missing_training_features": 0,
+    "representation": "pca",
+    "standard_scaling": "fitted on training data only",
+    "pca_components": 4,
+    "pca_explained_variance_ratio": [
+      0.24830975977538425,
+      0.15811627301663808,
+      0.14032484608583823,
+      0.12275240969100598
+    ],
+    "pca_explained_variance_ratio_sum": 0.6695032885688665,
+    "quantum_feature_range": [
+      0,
+      1
+    ],
+    "range_scaler_clip": true,
+    "test_values_clipped": 7,
+    "test_rows_matching_transformed_train_vector": 0
+  },
+  "created_at_utc": "2026-08-26T03:21:09.447621+00:00"
+}

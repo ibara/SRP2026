@@ -1,0 +1,39 @@
+{
+  "logical_qubits": 8,
+  "hardware_circuit_qubits": 120,
+  "aer_circuit_qubits": 8,
+  "classical_bits": 8,
+  "depth": 170,
+  "size": 400,
+  "operations": {
+    "rz": 201,
+    "sx": 136,
+    "cz": 54,
+    "measure": 8,
+    "x": 1,
+    "barrier": 1
+  },
+  "physical_to_dense": {
+    "97": 0,
+    "104": 1,
+    "105": 2,
+    "106": 3,
+    "107": 4,
+    "114": 5,
+    "116": 6,
+    "117": 7
+  },
+  "copied_quantum_errors": 56,
+  "copied_quantum_errors_by_instruction": {
+    "sx": 8,
+    "reset": 8,
+    "id": 8,
+    "x": 8,
+    "measure_2": 8,
+    "cz": 16
+  },
+  "copied_readout_errors": 8,
+  "omitted_custom_noise_passes": 1,
+  "custom_pass_note": "Backend delay-relaxation passes are omitted because the frozen ISA fidelity circuits contain no delay instructions.",
+  "created_at_utc": "2026-08-27T02:25:51.423093+00:00"
+}

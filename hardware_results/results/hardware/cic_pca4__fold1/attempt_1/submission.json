@@ -1,0 +1,12 @@
+{
+  "attempt": 1,
+  "job_id": "da7du9m0ukec73836cig",
+  "batch_id": "7f298afd-4452-4e66-814a-999eca99dbbd",
+  "submitted_at_utc": "2026-08-26T12:42:14.767780+00:00",
+  "status": "SUBMITTED",
+  "shots": 512,
+  "train_evaluations": 3160,
+  "test_evaluations": 6400,
+  "total_executions": 4894720,
+  "directory": "hardware_results/results/hardware/cic_pca4__fold1/attempt_1"
+}

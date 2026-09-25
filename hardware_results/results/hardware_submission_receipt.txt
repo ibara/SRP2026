@@ -1,0 +1,59 @@
+HARDWARE RESULTS CAMPAIGN SUBMISSION RECEIPT
+Generated: 2026-08-26 (UTC)
+
+Result root: hardware_results/results
+Backend: ibm_rensselaer
+IBM account: fishing
+IBM instance: General-dedicated
+
+Frozen workload
+- 6 configurations x 3 held-out splits = 18 primary runs
+- 3 prespecified split-0 repeat anchors
+- 21 total hardware runs
+- 80 training and 80 testing samples per run (40/40 balanced)
+- 512 shots
+- 9,560 kernel fidelities and 4,894,720 circuit executions per run
+- 200,760 kernel fidelities and 102,789,120 circuit executions total
+
+Batch 1
+Batch ID: 7f298afd-4452-4e66-814a-999eca99dbbd
+Opened: 2026-08-26T12:42:05.366409+00:00
+Closed: 2026-08-26T12:42:28.876278+00:00
+
+clamp_native10__fold0                 da7du86sidac73af8l4g
+clamp_pca4__fold0                     da7du8m0ukec73836ch0
+fabiana_native8__fold0                da7du96sidac73af8l6g
+cic_pca4__fold1                       da7du9m0ukec73836cig
+ember2018_pca4__fold0                 da7dua3sq5js73bjrdrg
+fabiana_native8__fold1                da7duak6l22c73dnflsg
+fabiana_native8__fold2                da7duarsq5js73bjrdtg
+fabiana_pca4__fold0                   da7dubesidac73af8lcg
+clamp_pca4__fold1                     da7dubm0ukec73836cmg
+fabiana_pca4__fold1                   da7duc3sq5js73bjrdv0
+clamp_native10__fold1                 da7duck6l22c73dnflv0
+cic_pca4__fold0                       da7dud46l22c73dnfm00
+
+Batch 2
+Batch ID: 515bf239-e881-43e5-93ae-c95d8e31eb30
+Opened: 2026-08-26T22:32:59.945492+00:00
+Closed: 2026-08-26T22:33:19.735522+00:00
+
+clamp_pca4__fold2                     da7mj7rsq5js73bk50i0
+ember2018_pca4__fold2                 da7mj8c6l22c73dnpdq0
+fabiana_pca4__fold2                   da7mj8rsq5js73bk50jg
+ember2018_pca4__fold1                 da7mj9bsq5js73bk50kg
+cic_pca4__fold2                       da7mj9u0ukec7383g060
+clamp_native10__fold2                 da7mja6sidac73afi320
+clamp_native10__fold0__repeat1        da7mjajsq5js73bk50mg
+clamp_pca4__fold0__repeat1            da7mjb60ukec7383g08g
+fabiana_native8__fold0__repeat1       da7mjbmsidac73afi33g
+
+Integrity checks at submission
+- 21 scheduled entries have exactly one attempt.
+- All 21 IBM job IDs are unique.
+- All 21 per-job submission.json receipts exist.
+- All 18 prepared conditions and all 18 exact kernels were complete before submission.
+- Local ideal/noisy Aer simulations were intentionally left stopped at the user's request.
+
+The campaign manifest is the authoritative machine-readable record:
+hardware_results/results/campaign.json

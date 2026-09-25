@@ -1,0 +1,32 @@
+{
+  "linear": {
+    "accuracy": 0.6875,
+    "balanced_accuracy": 0.6875,
+    "roc_auc": 0.781875,
+    "confusion_matrix": [
+      [
+        20,
+        20
+      ],
+      [
+        5,
+        35
+      ]
+    ]
+  },
+  "rbf": {
+    "accuracy": 0.6875,
+    "balanced_accuracy": 0.6875,
+    "roc_auc": 0.75625,
+    "confusion_matrix": [
+      [
+        17,
+        23
+      ],
+      [
+        2,
+        38
+      ]
+    ]
+  }
+}

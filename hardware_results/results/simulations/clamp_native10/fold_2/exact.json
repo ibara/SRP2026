@@ -1,0 +1,37 @@
+{
+  "configuration": {
+    "name": "clamp_native10",
+    "dataset": "clamp",
+    "representation": "native",
+    "qubits": 10
+  },
+  "fold": 2,
+  "mode": "exact",
+  "shots": null,
+  "metrics": {
+    "accuracy": 0.7875,
+    "balanced_accuracy": 0.7875000000000001,
+    "roc_auc": 0.89875,
+    "confusion_matrix": [
+      [
+        37,
+        3
+      ],
+      [
+        14,
+        26
+      ]
+    ],
+    "benign_recall": 0.925,
+    "malware_recall": 0.65
+  },
+  "psd": {
+    "raw_minimum_eigenvalue": 5.018250005917382e-11,
+    "negative_eigenvalue_count": 0,
+    "negative_eigenvalue_mass": 0.0,
+    "projected_minimum_eigenvalue": 5.018181867623366e-11
+  },
+  "kernel_vs_exact": null,
+  "elapsed_seconds": 0.668194816011237,
+  "created_at_utc": "2026-08-26T03:22:48.480620+00:00"
+}

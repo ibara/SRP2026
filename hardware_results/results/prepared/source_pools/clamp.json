@@ -1,0 +1,27 @@
+{
+  "candidate_rows": 5184,
+  "unique_clean_groups": 4040,
+  "duplicate_rows_removed": 1144,
+  "conflicting_groups_excluded": 0,
+  "conflicting_rows_excluded": 0,
+  "class_counts": {
+    "0": 2275,
+    "1": 1765
+  },
+  "dataset": "clamp",
+  "path": "ClaMP_Raw-5184.csv",
+  "sha256": "3f63b88f9d9563394ece5c28bf90fffede46f241dac0d30e0228bb78febaff37",
+  "source_rows": 5184,
+  "feature_names": [
+    "NumberOfSections",
+    "Characteristics",
+    "Magic",
+    "MajorLinkerVersion",
+    "SizeOfCode",
+    "AddressOfEntryPoint",
+    "ImageBase",
+    "SizeOfImage",
+    "DllCharacteristics",
+    "SizeOfStackReserve"
+  ]
+}

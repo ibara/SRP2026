@@ -1,0 +1,49 @@
+SRP2026 FROZEN QUANTUM-KERNEL EXPERIMENT: PRE-HARDWARE RESULTS
+==============================================================
+Generated (UTC): 2026-08-27T20:59:10.773049+00:00
+
+This file contains duplicate-safe preparation audits plus exact quantum and
+matched classical baselines. It contains no ideal-Aer, noisy-Aer, or hardware
+claim. Final results will be written to analysis/results.txt.
+
+PROTOCOL
+--------
+Six configurations x 3 folds; 80 train / 80 test
+zz_feature_map reps=2, linear; SVC C=1
+Planned hardware: 21 runs, 102,789,120 circuit executions
+
+SOURCE-POOL AUDIT
+-----------------
+dataset | selected features | candidates | clean unique groups | duplicates removed | conflicts excluded | class 0 / class 1
+clamp | 10 | 5184 | 4040 | 1144 | 0 | 2275 / 1765
+fabiana | 8 | 1156 | 895 | 261 | 0 | 546 / 349
+cic | 314 | 1280 | 1280 | 0 | 0 | 640 / 640
+ember2018 | 2381 | 1200 | 1200 | 0 | 0 | 600 / 600
+
+3-SPLIT BASELINES (mean +/- sample SD)
+------------------------------------------
+configuration | exact balanced accuracy | exact ROC AUC | linear balanced accuracy | RBF balanced accuracy
+clamp_native10 | 0.8417 +/- 0.0505 | 0.9260 +/- 0.0289 | 0.7167 +/- 0.0191 | 0.8542 +/- 0.0191
+  exact balanced accuracy by fold: 0.8500, 0.8875, 0.7875
+clamp_pca4 | 0.7500 +/- 0.0375 | 0.8390 +/- 0.0217 | 0.5917 +/- 0.0505 | 0.7542 +/- 0.0520
+  exact balanced accuracy by fold: 0.7875, 0.7500, 0.7125
+fabiana_native8 | 0.9750 +/- 0.0125 | 0.9821 +/- 0.0202 | 0.9125 +/- 0.0125 | 0.9167 +/- 0.0072
+  exact balanced accuracy by fold: 0.9875, 0.9750, 0.9625
+fabiana_pca4 | 0.9375 +/- 0.0000 | 0.9627 +/- 0.0036 | 0.8792 +/- 0.0191 | 0.9208 +/- 0.0191
+  exact balanced accuracy by fold: 0.9375, 0.9375, 0.9375
+cic_pca4 | 0.6917 +/- 0.0289 | 0.7800 +/- 0.0117 | 0.6875 +/- 0.0451 | 0.7083 +/- 0.0382
+  exact balanced accuracy by fold: 0.6750, 0.6750, 0.7250
+ember2018_pca4 | 0.6167 +/- 0.0144 | 0.7412 +/- 0.0245 | 0.6208 +/- 0.1155 | 0.6750 +/- 0.0125
+  exact balanced accuracy by fold: 0.6000, 0.6250, 0.6250
+
+EXACT COMPRESSION EFFECTS (PCA-4 minus native, paired by fold)
+--------------------------------------------------------------
+clamp: mean=-0.0917, SD=0.0402, folds=-0.0625, -0.1375, -0.0750
+fabiana: mean=-0.0375, SD=0.0125, folds=-0.0500, -0.0375, -0.0250
+
+EXECUTION STATUS
+----------------
+Prepared primary conditions: 18 / 18
+Completed exact conditions: 18 / 18
+Hardware attempts currently recorded: 21
+No hardware interpretation should be made from this file.
