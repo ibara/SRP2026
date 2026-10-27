@@ -1,4 +1,4 @@
-# Quantum malware classification
+# Quantum ML for malware classification
 
 One notebook for preprocessing → PCA → a Qiskit Aer quantum kernel → SVM classification.
 
