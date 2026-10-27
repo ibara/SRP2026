@@ -1,0 +1,97 @@
+--- MINIMAL/formatting-instructions-latex-2024-minimal-revision.tex
++++ BALANCED/formatting-instructions-latex-2024-balanced-revision.tex
+@@ -1,4 +1,4 @@
+-%File: formatting-instructions-latex-2024.tex
++%File: formatting-instructions-latex-2024-balanced-revision.tex
+ %release 2024.0
+ \documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+ \usepackage{aaai24}  % DO NOT CHANGE THIS
+@@ -150,17 +150,17 @@
+ 
+ \section{Introduction}
+ 
+-Quantum computing is a new computing paradigm that is beginning to show promise for changing the way data is processed. Its capacity to represent high-dimensional data provides new opportunities for fields that traditionally use classical computing. Although quantum computing raises concerns about new cyber threats, it also has potential defensive applications in detecting them.
++Quantum computing is a new computing paradigm that is beginning to show promise in improving the way data is processed. It offers potential for representing high-dimensional data, which provides new opportunities for fields that traditionally use classical computing. Although quantum computing raises concerns about an increase in cyber threats, it also has the potential to help detect them.
+ 
+-Malicious binaries, more commonly called malware, are one such threat. Malware continues to be a serious attack vector that is exceptionally difficult to address in theory~\cite{cohen1987computer} and in practice~\cite{pachhala}. Recent work in quantum machine learning has shown preliminary promise for cybersecurity analysis tasks, for example in classifying malicious network traffic~\cite{cotrupi}. This suggests that further exploration of where quantum machine learning may benefit cybersecurity practitioners is warranted.
++Malicious binaries, more commonly called malware, are one such threat: malware continues to be a serious attack vector, one that is exceptionally difficult to address in theory~\cite{cohen1987computer} and in practice~\cite{pachhala}. Recent work in quantum machine learning has shown modest potential for cybersecurity analysis tasks, for example in classifying malicious network traffic~\cite{cotrupi}. This suggests that further exploration into where quantum machine learning may benefit cybersecurity practitioners is warranted.
+ 
+-In this paper, we provide a four-environment comparison across several malware datasets, evaluating quantum kernels with exact statevectors, ideal and noisy simulation, and a real quantum computer. We also include matched classical models. Our contributions are twofold: first, we extend comparisons that are often limited to classical models and quantum simulation by running our pipeline on the quantum computer housed at Rensselaer Polytechnic Institute (RPI); second, we offer a practical case study of quantum-kernel behavior on this important cybersecurity task. Including both exact statevector evaluation and ideal shot-based Aer separates finite-shot effects from modeled and measured device noise.
++In this paper, we provide a four-environment comparison across several malware datasets, comparing quantum kernels evaluated exactly, on a simulator with and without noise, and on a real quantum computer. We also include matched classical models. Our contributions are twofold: first, we extend comparisons that are often limited to classical models and quantum simulation by running our pipeline on the quantum computer housed at Rensselaer Polytechnic Institute (RPI); second, we offer a practical case study of quantum-kernel behavior on this important cybersecurity task. Including both exact statevector evaluation and noiseless, shot-based Aer allows us to distinguish finite-shot effects from modeled and measured device noise.
+ 
+-The goal of this research is to evaluate the potential of quantum machine learning for malware detection alongside traditional classical models. The broader motivation was to ask whether a quantum approach could be more accurate, faster, or more energy efficient when classifying unknown software as malware or safe. Because this experiment did not collect comparable end-to-end timing or system-level energy measurements, it directly evaluates predictive behavior and kernel distortion rather than speed or energy advantage.
++The goal of this research is to evaluate the potential of quantum machine learning for detecting malware alongside traditional classical models. We sought to determine whether a quantum approach could be more accurate, faster, or more energy efficient when classifying unknown software as malware or safe. Because this experiment did not collect comparable end-to-end timing or system-level energy measurements, it directly evaluates predictive behavior and kernel distortion rather than speed or energy advantage.
+ 
+-We examined four malware datasets, studying how feature compression and NISQ hardware noise affect quantum-kernel geometry and malware-classification performance. The central result is that IBM hardware noticeably distorted the measured quantum kernels, especially for wider circuits, while the observed downstream classification changes remained small. Although we did not find evidence of quantum advantage, the experiment showed empirical classification stability under the specific conditions tested.
++We examined four malware datasets, studying how feature compression and NISQ hardware noise affect quantum-kernel geometry and malware-classification performance. The central result is that IBM hardware noticeably distorted the measured quantum kernels, especially for wider circuits, while the observed downstream classification changes remained small. Although we did not find evidence of quantum advantage, the experiment supports empirical hardware stability under the specific conditions tested.
+ 
+-We hope this study inspires more work on real-world quantum systems for cybersecurity practitioners. As cybersecurity increases in importance for individuals, enterprises, and governments, consistently evaluating the potential benefits and limitations of emerging technologies such as quantum computing is essential.
++It is our hope that this study inspires more work toward understanding real-world quantum systems for cybersecurity practitioners. As cybersecurity increases in importance for individuals, enterprises, and governments around the world, consistently evaluating the potential benefits and limitations of emerging technologies such as quantum computing is essential.
+ 
+ \section{Background}
+ 
+@@ -174,7 +174,7 @@
+ 
+ \section{Methodology}
+ 
+-For our tests, we use a support vector machine (SVM) for binary classification, with malicious samples labeled 1 and benign samples labeled 0. Rather than a classical kernel, we provide the support vector classifier (SVC) with a precomputed quantum kernel and evaluate its behavior under simulated and real NISQ hardware conditions.
++For our tests, we use a support vector machine (SVM) for binary classification, with malicious samples labeled 1 and benign samples labeled 0. Rather than a classical precomputed kernel, we provide the support vector classifier (SVC) with a quantum kernel. We then evaluate the behavior of the quantum kernel under simulated and real NISQ hardware conditions for the selected malware datasets.
+ 
+ \subsubsection{Datasets}
+ 
+@@ -197,7 +197,7 @@
+ \end{tabular}
+ \end{center}
+ 
+-Three datasets---CLaMP, MBR, and EMBER2018---contain static Windows Portable Executable (PE) features, which are widely used in machine-learning-based malware classification~\cite{ucci2019survey}. CIC-YNU-IoTMal instead contains Linux system-activity reports collected from IoT binaries executed in sandboxes.
++Three datasets---CLaMP, MBR, and EMBER2018---contain static Windows Portable Executable (PE) features, which are widely used in machine-learning-based malware classification~\cite{ucci2019survey}. CIC-YNU-IoTMal instead contains Linux system-activity reports collected from IoT binaries executed in ARM, MIPS, MIPSEL, and x86 sandboxes as an additional benchmark.
+ 
+ \subsubsection{Preprocessing \& Data Splitting}
+ CLaMP and MBR were evaluated using both selected native features and four-component PCA representations; CIC-YNU-IoTMal and EMBER2018 were evaluated using PCA-4 only (Table~\ref{tab:dataset-design}). For each of the six configurations, we repeated the experiment on three held-out splits. Each split contained 80 training and 80 test samples, balanced between benign and malicious classes. Test samples were reserved before training so that no sample appeared in both sets within a split, although training samples could overlap across splits. The experiments are therefore repeated holdouts rather than independent replicates.
+@@ -206,7 +206,7 @@
+ 
+ \subsection{Quantum Kernel Implementation}
+ 
+-We encode each feature with one qubit; thus, for PCA-4, we use four qubits to encode the four selected features. Qiskit's \texttt{zz\_feature\_map}~\cite{qiskit2024} was used with two repetitions and linear entanglement. Defining the encoded quantum state as
++An $n$-qubit system spans a $2^n$-dimensional Hilbert space. We map $n$ classical input features to quantum states in this Hilbert space, using one qubit per input feature. Thus, for PCA-4, the resulting quantum state lies in a $2^4=16$-dimensional Hilbert space. We use Qiskit's \texttt{zz\_feature\_map}~\cite{qiskit2024} with two repetitions and linear entanglement for this encoding. Defining the encoded quantum state as
+ \[
+ |\phi(\mathbf{x})\rangle = U_{\phi}(\mathbf{x})|0^d\rangle,
+ \]
+@@ -224,16 +224,16 @@
+ \end{equation}
+ where $d \in \{4,8,10\}$ is both the number of selected input features and the number of qubits used in the feature map.
+ 
+-The circuit first applies $U_{\phi}(\mathbf{x})$, followed by $U_{\phi}^{\dagger}(\mathbf{z})$. The amplitude of the $|0^d\rangle$ state after these operations corresponds to the overlap between the quantum states encoding the samples $\mathbf{x}$ and $\mathbf{z}$. The kernel value $K(\mathbf{x},\mathbf{z})$ is the squared magnitude of this overlap and can therefore be estimated as the probability of measuring the $|0^d\rangle$ state.
++The circuit first applies $U_{\phi}(\mathbf{x})$, followed by $U_{\phi}^{\dagger}(\mathbf{z})$. Here, $U_{\phi}(\mathbf{x})$ is the circuit constructed by \texttt{zz\_feature\_map} with its parameters bound to the input feature vector $\mathbf{x}$. The amplitude of the $|0^d\rangle$ state after these operations corresponds to the overlap between the quantum states encoding the samples $\mathbf{x}$ and $\mathbf{z}$. The kernel value $K(\mathbf{x},\mathbf{z})$ is the squared magnitude of this overlap and can therefore be estimated as the probability of measuring the $|0^d\rangle$ state.
+ 
+ To maintain a valid training kernel in the presence of finite-shot sampling and device noise, we first applied $K\leftarrow(K+K^T)/2$ and set the diagonal to one. We then eigendecomposed the kernel, clipped negative eigenvalues to zero, reconstructed the matrix, and renormalized its diagonal to one~\cite{scholkopf2002,qiskit2024}. The rectangular test kernel was not projected. For measured kernel $K_m$ and exact kernel $K_e$, relative Frobenius error was
+ \begin{equation}
+-E_F=\frac{\lVert K_m-K_e\rVert_F}{\lVert K_e\rVert_F}.
++E_F=\frac{\left\|K_m-K_e\right\|_F}{\left\|K_e\right\|_F}.
+ \label{eq:frobenius-error}
+ \end{equation}
+ We also report the Pearson correlation between corresponding test-kernel entries~\cite{Frob,Pear}.
+ 
+-We tested four environments: (1) exact statevector evaluation, (2) ideal shot-based Qiskit Aer simulation, (3) noisy Aer simulation, and (4) \texttt{ibm\_rensselaer} hardware execution. The three sampling environments used 512 shots. Exact statevector evaluation provides the mathematical reference, while ideal Aer isolates finite-shot and transpilation effects before simulated or measured hardware noise is introduced. The same transpiled circuit was used in the sampling environments. Noisy Aer used a backend-derived noise model from the saved \texttt{ibm\_rensselaer} calibration snapshot associated with the hardware campaign, including its gate and readout errors, basis gates, and coupling map. Dynamical decoupling, twirling, and measurement-error mitigation were not applied.
++We tested four environments: (1) exact statevector evaluation, (2) ideal shot-based Qiskit Aer simulation, (3) noisy Aer simulation, and (4) \texttt{ibm\_rensselaer} hardware execution. The three sampling environments used 512 shots. Exact statevector evaluation provides the mathematical reference, while ideal Aer isolates finite-shot and transpilation effects before simulated or measured hardware noise is introduced. The same transpiled circuit was used in the sampling environments. Noisy Aer used a backend-derived noise model from a saved \texttt{ibm\_rensselaer} calibration snapshot collected immediately before the August 2026 hardware campaign, including its gate and readout errors. Transpilation used the backend coupling map and its native \texttt{rz}, \texttt{sx}, \texttt{x}, and \texttt{cz} basis gates. Dynamical decoupling, twirling, and measurement-error mitigation were not applied.
+ 
+ 
+ 
+@@ -314,13 +314,13 @@
+ 
+ \section{Discussion}
+ 
+-The principal hardware result was the stability of downstream classification despite measurable changes in the quantum kernels. Hardware execution produced substantially greater relative kernel error than exact or ideal simulation, particularly for the wider circuits, yet balanced accuracy changed by less than two percentage points. The paired tests found no significant hardware-versus-exact prediction differences after multiplicity adjustment. These findings show empirical stability for the tested samples, feature map, shot count, backend, and calibration period. They do not establish formal equivalence between exact and hardware execution.
++The principal result was the stability of hardware classification despite measurable changes in the quantum kernels from noise and device error. In particular, despite the substantial kernel error, especially for the wider circuits, balanced accuracy changed by less than two percentage points. The paired tests found no significant hardware-versus-exact prediction differences after multiplicity adjustment. These findings support empirical stability for the tested samples, feature map, shot count, backend, and calibration period, but they do not establish formal equivalence between exact and hardware execution.
+ 
+-Kernel fidelity and classification performance were not interchangeable measures in this experiment. Circuit resource requirements, represented here by CZ count, were strongly associated with kernel distortion but not with accuracy degradation. Because CZ count co-varied with circuit width, depth, and size, this analysis cannot identify CZ gates as the cause of the distortion. The hardware kernels could nevertheless differ numerically from their exact counterparts while retaining enough relative structure for the SVC to produce similar decision boundaries. This observation is specific to the tested SVC solutions; greater distortion could affect another dataset, feature map, regularization value, or set of support vectors differently.
++We did not find kernel fidelity and classification performance to be interchangeable measures in this experiment. For instance, CZ count was strongly associated with kernel distortion but was not associated with a decrease in accuracy. However, because CZ count co-varied with circuit width, depth, and size, this analysis cannot identify CZ gates as the cause of the distortion. The hardware kernels were still able to retain enough relative structure compared with the exact kernels for the SVC to produce similar results. This observation, however, is specific to our tests; greater distortion could have different effects on other datasets, feature maps, regularization values, or sets of support vectors.
+ 
+-Feature compression presented a separate tradeoff. Four-component PCA reduced qubit count, circuit depth, CZ count, and hardware-induced kernel distortion. It also removed predictive information in some configurations, with a substantial loss for CLaMP and a smaller loss for MBR. The results therefore do not support treating PCA solely as a noise-reduction step: its resource benefit must be evaluated against representation loss for each dataset.
++Further, applying four-component PCA reduced qubit count, circuit depth, CZ count, and hardware-induced kernel distortion. This resource reduction corresponded to a loss of predictive information in some configurations, with a substantial loss for CLaMP and a smaller loss for MBR. PCA should therefore not be treated solely as a noise-reduction step; its resource benefit must be evaluated against representation loss for each dataset.
+ 
+-The classical comparisons did not demonstrate a consistent accuracy advantage for the quantum kernel. RBF SVC was competitive with or better than the hardware-quantum model on CLaMP, CIC, and EMBER2018, while the quantum models were descriptively higher on MBR. These comparisons used fixed $C=1$ models without hyperparameter tuning and were intended as matched checks rather than optimized classical benchmarks. The study also did not collect comparable end-to-end wall-clock or system-level energy measurements. Accordingly, the results demonstrate neither predictive, computational, nor energy-based quantum advantage.
++The classical comparisons did not demonstrate a consistent accuracy advantage for the quantum kernel. RBF SVC was competitive with or better than the hardware-quantum model on CLaMP, CIC, and EMBER2018, while the quantum models were descriptively higher on MBR. These comparisons used fixed $C=1$ models without hyperparameter tuning to provide matched comparisons rather than optimized classical benchmarks. Because we did not collect comparable wall-clock time or system-level energy measurements, the results do not demonstrate computational or energy-based quantum advantage.
+ 
+ These findings are limited to balanced samples of 80 training and 80 test observations across three repeated holdouts, one feature-map architecture, one shot count, one backend and calibration period, and only two native-versus-PCA comparisons. Circuit width co-varied with depth, CZ count, dataset, and representation, so the resource associations are descriptive rather than causal. The classical models used fixed $C=1$ without tuning, and the study did not measure comparable wall-clock time or system-level energy use.
+ 

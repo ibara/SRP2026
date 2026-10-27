@@ -1,0 +1,7 @@
+configuration,exact_balanced_accuracy_percent,hardware_balanced_accuracy_percent,change_percentage_points
+"CLaMP native, 10 qubits",84.2,84.6,+0.4
+"CLaMP PCA, 4 qubits",75.0,74.6,-0.4
+"MBR native, 8 qubits",97.5,95.8,-1.7
+"MBR PCA, 4 qubits",93.8,92.9,-0.8
+"CIC PCA, 4 qubits",69.2,70.4,+1.3
+"EMBER 2018 PCA, 4 qubits",61.7,61.3,-0.4

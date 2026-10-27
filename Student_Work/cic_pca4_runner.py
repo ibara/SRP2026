@@ -44,11 +44,12 @@ BENIGN_FAMILY = "Benign"
 ARCH_COLUMN = "Arch"
 N_QFEATURES = 4
 
+DATASET_ROOT = Path(__file__).resolve().parent.parent / "Malware_Datasets"
 DEFAULT_DATA_PATHS = {
-    "ARM": Path("data/cic_ynu/arm_sar.parquet"),
-    "MIPS": Path("data/cic_ynu/mips_sar.parquet"),
-    "MIPSEL": Path("data/cic_ynu/mipsel_sar.parquet"),
-    "x86": Path("data/cic_ynu/x86_sar.parquet"),
+    "ARM": DATASET_ROOT / "data/cic_ynu/arm_sar.parquet",
+    "MIPS": DATASET_ROOT / "data/cic_ynu/mips_sar.parquet",
+    "MIPSEL": DATASET_ROOT / "data/cic_ynu/mipsel_sar.parquet",
+    "x86": DATASET_ROOT / "data/cic_ynu/x86_sar.parquet",
 }
 
 
