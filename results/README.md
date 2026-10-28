@@ -1,9 +1,9 @@
 # Core results
 
-These are the original README's **mean balanced accuracies across three held-out
-splits**, each with 80 balanced training and 80 balanced test rows. The historical
-experiment used a two-repetition, linearly entangled ZZ feature map, `SVC(C=1)`,
-and 512 shots for IBM hardware.
+These are the **mean balanced accuracies across three held-out
+splits**, each with 80 balanced training and 80 balanced test rows 
+using a two-repetition, linearly entangled ZZ feature map, `SVC(C=1)`,
+and 512 shots run on IBM-RPI Quantum System One Nighthawk r2 QPU hardware.
 
 | Configuration | Exact | IBM hardware | Change |
 |---|---:|---:|---:|
@@ -25,6 +25,6 @@ run settings. Those files describe a **single local Aer split**, so they are not
 reproductions of the hardware averages above. Rerunning the same setting replaces
 its notebook CSV.
 
-Detailed historical results and the other findings from the previous README remain
+Detailed historical results and the other findings remain
 in [Student_Work/](../Student_Work/README_before_reorganization.md), with full
 source metrics in the [archived analysis folder](../Student_Work/hardware_results/results/analysis/).
