@@ -27,4 +27,4 @@ The notebook runs one Aer split. Our hardware results average three splits.
 
 If you're interested in running this on real hardware yourself, see [IBM Quantum's getting-started guide](https://quantum.cloud.ibm.com/docs/en/guides/hello-world).
 
-## [Our ISC2 Security Congress 2026 slide deck](https://briancallahan.net/presentations/A_Quantum_Cybersecurity_Platform_-_Security_Congress.pdf)
+## [Our ISC2 Security Congress 2026 slide deck](https://github.com/ibara/SRP2026/blob/main/A%20Quantum%20Cybersecurity%20Platform%20-%20Security%20Congress.pdf)
