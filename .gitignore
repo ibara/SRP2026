@@ -26,3 +26,12 @@ ClaMP_Raw-5184.csv
 data/*
 !data/README.md
 Sean_CIC_dataset/
+
+# Dataset locations after repository reorganization (keep source notes).
+/Malware_Datasets/data/
+/Malware_Datasets/Sean_CIC_dataset/
+/Malware_Datasets/**/*.csv
+/Malware_Datasets/**/*.parquet
+/Malware_Datasets/**/*.jsonl
+/Malware_Datasets/**/*.zip
+/Malware_Datasets/**/*.tar.*

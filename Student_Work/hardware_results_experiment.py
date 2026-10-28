@@ -62,7 +62,7 @@ from ember2018_pca4_runner import DEFAULT_DATA_PATH as EMBER_PATH
 
 SCHEMA_VERSION = 1
 MASTER_SEED = 20_260_825
-# Seed 202 (and the next candidate, 203) caused a Fabiana test vector to
+# Seed 202 (and the next candidate, 203) caused an MBR test vector to
 # collide with a training vector only after required range clipping.  Seed 204
 # is the first ascending candidate that passes the frozen transformed-overlap
 # guard across every dataset/representation; no model metric was consulted.
@@ -91,7 +91,7 @@ ACCOUNT_NAME = "fishing"
 INSTANCE_NAME = "General-dedicated"
 BACKEND_NAME = "ibm_rensselaer"
 
-RESULT_ROOT = Path("hardware_results/results")
+RESULT_ROOT = Path(__file__).resolve().parent / "hardware_results/results"
 CAMPAIGN_PATH = RESULT_ROOT / "campaign.json"
 SOURCE_POOL_DIR = RESULT_ROOT / "prepared" / "source_pools"
 PREPARED_DIR = RESULT_ROOT / "prepared" / "conditions"
@@ -101,8 +101,9 @@ HARDWARE_DIR = RESULT_ROOT / "hardware"
 ANALYSIS_DIR = RESULT_ROOT / "analysis"
 LATEX_TABLE_DIR = ANALYSIS_DIR / "tables"
 
-CLAMP_PATH = Path("ClaMP_Raw-5184.csv")
-FABIANA_PATH = Path("data/fabiana/Malware_and_benign_recognition.csv")
+DATASET_ROOT = Path(__file__).resolve().parent.parent / "Malware_Datasets"
+CLAMP_PATH = DATASET_ROOT / "ClaMP_Raw-5184.csv"
+FABIANA_PATH = DATASET_ROOT / "data/fabiana/Malware_and_benign_recognition.csv"
 
 CLAMP_FEATURES = (
     "NumberOfSections",
@@ -165,8 +166,10 @@ TERMINAL_JOB_STATES = {"DONE", "ERROR", "CANCELLED"}
 CONFIGURATION_LABELS = {
     "clamp_native10": "CLaMP native-10",
     "clamp_pca4": "CLaMP PCA-4",
-    "fabiana_native8": "Fabiana native-8",
-    "fabiana_pca4": "Fabiana PCA-4",
+    # Frozen run IDs retain the historical ``fabiana_*`` prefix, while paper
+    # outputs use the neutral abbreviation for the Kaggle dataset.
+    "fabiana_native8": "MBR native-8",
+    "fabiana_pca4": "MBR PCA-4",
     "cic_pca4": "CIC PCA-4",
     "ember2018_pca4": "EMBER2018 PCA-4",
 }
@@ -3695,7 +3698,10 @@ def _results_latex_tables(
     }
     effect_rows = [
         {
-            "Dataset": str(row["dataset"]).upper(),
+            "Dataset": {
+                "clamp": "CLaMP",
+                "fabiana": "MBR",
+            }.get(str(row["dataset"]), str(row["dataset"]).upper()),
             "Effect": effect_labels[str(row["effect"])],
             "Mean [95% CI]": _interval(
                 row["mean"], row["ci_low_t"], row["ci_high_t"]
@@ -3954,7 +3960,13 @@ def _results_figures(metric_rows: Sequence[Mapping[str, Any]]) -> None:
                 linewidth=1.8,
                 label=CONFIGURATION_SHORT_LABELS[configuration],
             )
-        axis.set_title("EMBER2018" if dataset == "ember2018" else dataset.upper())
+        dataset_titles = {
+            "clamp": "CLaMP",
+            "fabiana": "MBR",
+            "cic": "CIC",
+            "ember2018": "EMBER2018",
+        }
+        axis.set_title(dataset_titles[dataset])
         axis.set_ylim(0, 1.02)
         axis.set_xticks(mode_positions, mode_tick_labels, rotation=18, ha="right")
         axis.grid(axis="y", color="#d0d0d0", linewidth=0.6, alpha=0.7)

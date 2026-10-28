@@ -1,0 +1,13 @@
+pandas
+pyarrow
+kaggle
+numpy
+matplotlib
+seaborn
+scikit-learn
+scipy
+qiskit
+qiskit-aer
+qiskit-machine-learning
+qiskit-algorithms
+qiskit-ibm-runtime

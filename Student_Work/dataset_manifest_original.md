@@ -9,7 +9,7 @@ below; the contributor notebooks at their original filenames remain unchanged.
 | EMBER 2018 v2 flattened features | [Kaggle](https://www.kaggle.com/datasets/dhoogla/ember-2018-v2-features) | `ember2018/train_ember_2018_v2_features.parquet` | Downloaded and validated | `Ember 2018 Quantum.ipynb`, `Intro to Dataset 1(classical) (1).ipynb` |
 | CIC-YNU-IoTMal 2026 SAR features | [UNB](https://www.unb.ca/cic/datasets/ynu-iot-2026.html) | `cic_ynu/{arm,mips,mipsel,x86}_sar.parquet` | Available locally and validated | `QSVM big dataset-Copy1.ipynb`, `Big Dataset Classical.ipynb` |
 | EMBER2024 | [GitHub](https://github.com/FutureComputing4AI/EMBER2024) | `ember2024/*.jsonl` | Subset selection required | `QuantumSimEMBER2024.ipynb`, `classicalEMBER.ipynb` |
-| Malware/benign recognition | [Kaggle](https://www.kaggle.com/datasets/aashishzzz/malware-detection-dataset-with-new-malware-info) | `fabiana/Malware_and_benign_recognition.csv` | Downloaded and validated | `MachineLearning.ipynb`, `Classical.ipynb`, `Fabiana_DataAnalysis.ipynb` |
+| Malware and Benign Recognition (MBR) | [Kaggle](https://www.kaggle.com/datasets/aashishzzz/malware-detection-dataset-with-new-malware-info) | `fabiana/Malware_and_benign_recognition.csv` | Downloaded and validated | `MachineLearning.ipynb`, `Classical.ipynb`, `Fabiana_DataAnalysis.ipynb` |
 
 The four CIC SAR files supplied for this project are available locally.
 Obtaining them independently requires the source's registration form.

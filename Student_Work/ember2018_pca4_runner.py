@@ -23,8 +23,9 @@ from cic_pca4_runner import (
 )
 
 
-DEFAULT_DATA_PATH = Path(
-    "data/ember2018/train_ember_2018_v2_features.parquet"
+DEFAULT_DATA_PATH = (
+    Path(__file__).resolve().parent.parent
+    / "Malware_Datasets/data/ember2018/train_ember_2018_v2_features.parquet"
 )
 TARGET_COLUMN = "Label"
 
